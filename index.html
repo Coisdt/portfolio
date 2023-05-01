@@ -7,28 +7,39 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   </head>
-  <body>
+  <body id="top">
+    <!--
+====================================================================
+                           NAVBAR SECTION
+====================================================================
+    -->
     <header>
-    <!--------------NAVBAR----------------->
-      <div class="logo-container"><span class="material-symbols-outlined">code</span>
-        <h1>Tall_Guy_Coder</h1>
+      <div class="navigation-bar">
+<div class="logo-container">
+      <img src="./images/logo2.jpg" alt="">
       </div>
-  <nav class="nav">
+      <div class="toggle-nav-btn">
+       <i class="fa-solid fa-bars" style="font-size: 2rem;"></i>
+      </div>
+  <div class="nav">
   <ul class="nav-links">
-    <li><a class="nav-link active" href="#">Home</a></li>
-    <li><a class="nav-link about-link" href="#">About</a></li>
-    <li><a class="nav-link" href="#">Projects</a></li>
-    <li><a class="nav-link" href="#">Coding Challenges</a></li>
-    <li><a class="nav-link" href="#">Blog</a></li>
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#challenges" class="nav-link">Challenges</a></li>
+    <li><a href="#blog" class="nav-link">Blog</a></li>
+
+    <li><a href="#contact" class="nav-link btn"  style="color: white; text-decoration: none;">Contact Me</a></li>
   </ul>
-  </nav>
-<button class="contact-btn btn" href="contact.html">Contact Me</button>
-</button>
-<div class="toggle-nav-btn">
- <i class="fa-solid fa-bars" style="font-size: 2rem;"></i>
 </div>
-<!--------------SIDEBAR----------------->
+</header>
+<!--
+====================================================================
+                           SIDEBAR SECTION
+====================================================================
+ -->
 <div class="sidebar-overlay">
   <!-- add show here -->
   <aside class="sidebar"> 
@@ -41,19 +52,23 @@
     <ul class="toggle-nav-links">
       <!-- scroll to sections -->
       <li><a class="toggle-nav-link active" href="index.html">Home</a></li>
-      <li><a class="toggle-nav-link" href="about.html">About</a></li>
-      <li><a class="toggle-nav-link" href="projects.html">Projects</a></li>
-      <li><a class="toggle-nav-link" href="blog.html">Blog</a></li>
-      <li><a class="toggle-nav-link" href="contact.html">Contact Me</a></li>
+      <li><a class="toggle-nav-link" href="#">About</a></li>
+      <li><a class="toggle-nav-link" href="#">Projects</a></li>
+      <li><a class="toggle-nav-link" href="#">Challenges</a></li>
+      <li><a class="toggle-nav-link" href="#">Blog</a></li>
+      <li><a class="toggle-nav-link" href="#">Contact Me</a></li>
     </ul>
     <!-- design div --><div class="design"></div><!-- end of design div -->
   </aside>
 </div>
-    </header>
 
 <!-- design div --><div class="design"></div><!-- end of design div -->
 
-<!--------------HERO SECTION----------------->
+<!--
+====================================================================
+                           HERO SECTION
+====================================================================
+ -->
 <section class="hero">
   <div class="hero-container">
     <div class="introduction-container">
@@ -71,40 +86,77 @@
       <a href="https://linkedin.com"><i class="fa-brands fa-linkedin" style="font-size: 4em;"></i></a>
      
     </div>
-      <button class="introduction-btn btn"><a href="#"></a>Download CV</button>
+      <div class="introduction-btn"><button class="introduction-btn btn"><a href="#"></a>View my CV</button></div>
   </div>
   <div class="profile-img-container">
     <img class='intro-profile-img' src="./images/profile-removebg-preview.png" alt="profile-img">
   </div>
+  <!-- SCROLL UP BTN -->
+  <div class="scroll-up-btn">
+    <i class="fas fa-arrow-up up-btn btn" style="font-size: 2rem"></i>
 </section>
 
 <!-- design div --><div class="design"></div><!-- end of design div -->
 
-<!--------------ABOUT SECTION----------------->
+<!--
+====================================================================
+                           ABOUT SECTION
+====================================================================
+-->
 <!-- summary of about with skills featured, link to seperate about page -->
-<section class="about">
+<section class="about" id="about">
   <div class="about-container">
-<div class="about-card">
-  <h1>About Me</h1>
-<p>My name is Francois du Toit, the Tall Guy Coder, a new and enthusiastic developer who is passionate about creating innovative solutions to complex problems. With a strong foundation in web development and a hunger to learn more, I am always seeking new challenges to expand my skill set. My attention to detail and dedication to writing clean, efficient code makes me a valuable asset to any team. I am excited to bring my unique perspective and creativity to the world of web development.</p>
-</div>
-  <div class="skills">
-    <div class="skills-title"><h2>Skills</h2></div>
-    <div class="skills-center">
-      <div class="skill-container">
-        <img src="./images/icons8-html-5.svg" alt="html">
-        <h3>HTML</h3>
-      </div>
-      <div class="skill-container">
-        <img src="./images/icons8-css3.svg" alt="css">
-        <h3>CSS</h3>
-      </div>
-      <div class="skill-container">
-        <img src="./images/icons8-javascript.svg" alt="javascript">
-        <h3>Javascript</h3>
+    <div class="about-card">
+      <h1>About Me</h1>
+      <p>My name is Francois du Toit, the Tall Guy Coder, a new and enthusiastic developer who is passionate about creating innovative solutions to complex problems. With a strong foundation in web development and a hunger to learn more, I am always seeking new challenges to expand my skill set. My attention to detail and dedication to writing clean, efficient code makes me a valuable asset to any team. I am excited to bring my unique perspective and creativity to the world of web development.</p>
+      <button class="about-me-read-more btn">Read More</button>
+    </div>
+    <!-- popup -->
+    <div class="popup-container">
+  <div class="about-popup">
+      <i class="fa-solid fa-x close-popup"></i>
+      <h1>More about me...</h1>
+      <p>
+      Hello world! My name is Francois du Toit. I am currently an educator based in Cape Town working for the Department of Education. 
+      <br>
+      I am known for my "tallness" - hence the name of 'Tall Guy' Coder - and also for the continuous smiles and hard work I bring to the table. 
+      <br>
+      Ever since I can remember, I've been infront of a computer, obsessing over figuring out how the software or hardware works. Ive always been interested in a career in tech, but always thought I was not smart enough to follow through. 
+      <br>
+      In September 2022, my baby boy was born. This sparked something in me. I decided then and there that I wanted a better life for my family. 
+      <br>
+      "When words become unclear, I shall focus with photographs. When images become inadequate, I shall be content with silence." - Ansel Adams.
+      <br>
+      I've recently been made the luckiest man alive when I married the girl of my dreams. And in truth, she is the backbone of this business and the reason it exists today. Without her push I will not be standing tall today!
+      <br>
+      Thank you so much for showing an interest in my work! 
+      It's an absolute pleasure for me to work with you to create something beautiful for your business. </p>
+    </div>
+    </div>
+  
+    
+  
+   
+    
+    <!-- skills -->
+    <div class="skills">
+      <div class="skills-title"><h2>Skills</h2></div>
+      <div class="skills-center">
+        <div class="skill-container">
+          <img src="./images/icons8-html-5.svg" alt="html">
+          <h3>HTML</h3>
+        </div>
+        <div class="skill-container">
+          <img src="./images/icons8-css3.svg" alt="css">
+          <h3>CSS</h3>
+        </div>
+        <div class="skill-container">
+          <img src="./images/icons8-javascript.svg" alt="javascript">
+          <h3>Javascript</h3>
+        </div>
       </div>
     </div>
-  </div>
+  <!-- tools -->
   <div class="tools">
     <div class="tools-title"><h2>Tools</h2></div>
     <div class="tools-center">
@@ -116,20 +168,28 @@
         <img src="./images/icons8-git.svg" alt="git">
         <h3>Git</h3>
       </div>
+      <div class="tool-container">
+        <img src="./images/icons8-canva.svg" alt="canva">
+        <h3>Canva</h3>
       </div>
     </div>
   </div>
-  </div> 
+</div>
+</div> 
 </section>
 
 <!-- design div --><div class="design"></div><!-- end of design div -->
- 
-<!--------------PROJECTS SECTION----------------->
+
+<!--
+====================================================================
+                           PROJECTS SECTION
+====================================================================
+ -->
 <!-- latest projects featured, link to seperate all projects page -->
 
-<section class="projects">
+<section class="projects" id="projects">
   <div class="projects-center">
-    <div><h1>My Portfolio Projects</h1></div>
+    <div class="project-center-title"><h1>My Portfolio Projects</h1></div>
     <div class="projects-container">
       <!-- start -->
       <div class="project-card">
@@ -140,7 +200,7 @@
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, rerum aspernatur nobis quasi quod hic quae officia possimus totam repudiandae provident voluptates architecto mollitia pariatur omnis sint nisi inventore dolorem!</p>
         </div>
         <div class="project-btns">
-          <button class="project-view-live btn">View Live</button>
+            <a href="./fakeProject.html"><button class="project-view-live btn">View Live</button></a>
           <button class="project-git-code btn">Github Code</button>
         </div>
       </div>
@@ -154,7 +214,7 @@
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, rerum aspernatur nobis quasi quod hic quae officia possimus totam repudiandae provident voluptates architecto mollitia pariatur omnis sint nisi inventore dolorem!</p>
         </div>
         <div class="project-btns">
-          <button class="project-view-live btn">View Live</button>
+            <a href="./fakeProject.html"><button class="project-view-live btn">View Live</button></a>
           <button class="project-git-code btn">Github Code</button>
         </div>
       </div>
@@ -168,7 +228,7 @@
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, rerum aspernatur nobis quasi quod hic quae officia possimus totam repudiandae provident voluptates architecto mollitia pariatur omnis sint nisi inventore dolorem!</p>
         </div>
         <div class="project-btns">
-          <button class="project-view-live btn">View Live</button>
+          <a href="./fakeProject.html"><button class="project-view-live btn">View Live</button></a>
           <button class="project-git-code btn">Github Code</button>
         </div>
       </div>
@@ -178,37 +238,67 @@
 
   </div>
   <div class="all-projects-btn">
-    <button class="all-projects-btn btn">View All Projects</button>
+    <a href="./allProjects.html"><button class="all-projects-btn btn">View All Projects</button></a>
   </div>
 </section>
 
 <!-- design div --><div class="design"></div><!-- end of design div -->
 
-<!--------------CODING CHALLENGES SECTION----------------->
+<!--
+====================================================================
+                   CODING CHALLENGES SECTION
+====================================================================
+ -->
 <!-- latest blog featured, link to seperate blog page -->
-<section class="coding-challenges">
+<section class="coding-challenges" id="challenges">
   <div class="challenges-container">
     <div><h1>This is the code challenges section</h1></div>
   </div>
 </section>
 
+
+<!--
+  ====================================================================
+  something is coming
+  ====================================================================
+-->
+<h1 class="something-is-coming">Something is coming</h1>
 <!-- design div --><div class="design"></div><!-- end of design div -->
 
 
-<!--------------BLOG SECTION----------------->
-<!-- latest blog featured, link to seperate blog page -->
-<section class="blog">
+<!--
+====================================================================
+                           BLOG SECTION
+====================================================================
+ -->
+<!-- make a featured block thats bigger than the rest, then previous blogs under and smaller -->
+<section class="blog" id="blog">
+  <div><h1>My blog posts</h1></div>
   <div class="blog-container">
-    <div><h1>This is the blog section</h1></div>
+<!-- blog entry -->
   </div>
-</section>
+  <!-- read all blogs btn -->
+  <div class="all-blogs-div">
+    <a href="./blogs.html"><i class="read-all-blogs btn">Read all blogs</i></a>
+  </div>
+
+  <!-- popup -->
+    <div class="blog-popup-container">
+      <div class="blog-popup">
+        <i class="fa-solid fa-x close-blog-popup"></i>
+        <P>Coming soon</P>
+      </div>
+  </section>
+  
 
 <!-- design div --><div class="design"></div><!-- end of design div -->
+<!--
+====================================================================
+                           CONTACT SECTION
+====================================================================
+ -->
 
-
-<!--------------CONTACT SECTION----------------->
-
-<section class="contact">
+<section class="contact" id="contact">
   <div class="contact-container">
     <div class="contact-title"><h1>Contact Me</h1></div>
     <div class="contact-info">
@@ -219,19 +309,20 @@
       <input type="text" class="input" placeholder="Your Name">
       <input type="email" class="input" placeholder="Your Email">
       <input type="number" class="input" placeholder="Your Phone Number">
-      <input type="text-area" class="input text-area" placeholder="Write your message here..." style="height: 400px;">
-      <button class="submit btn">Submit</button>
-    </form>
+      <textarea rows="4" class="input text-area" placeholder="Write your message here..."></textarea>
+        <button class="submit btn">Submit</button>
+      </form>
   </div>
   </div>
 </section>
 
 <!-- design div --><div class="design"></div><!-- end of design div -->
 
-
-
-
-<!--------------FOOTER SECTION----------------->
+<!--
+====================================================================
+                           FOOTER SECTION
+====================================================================
+ -->
 
     <footer class="page-footer">
       <h2>Tall Guy Coder</h2>
@@ -243,7 +334,8 @@
         <a href="about.html">About Me</a>
         <a href="blog.html">Blog</a>
       </div>
-      <p>Copyright c 20223 Tall Guy Coder. All rights reserved. Site credit.</p>
+      <p>Copyright &copy; <span id="date"></span>. Tall Guy Coder.</p>
+      <p>All rights reserved. Site credit.</p>
     </footer> 
 
     <script src="./app.js"></script>
