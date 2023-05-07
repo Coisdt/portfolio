@@ -158,7 +158,6 @@ const blogs = [
   },
 ];
 
-
 // ====================================================================
 //                             SHOW BLOGS DYN
 // ====================================================================
@@ -187,18 +186,16 @@ fetchBlog(blogs);
 //                          SHOW ABOUT POPUP
 // ====================================================================
 
-const popupContainer = document.querySelector(".popup-container");
-const readMoreAboutMe = document.querySelector(".about-me-read-more");
-const readMoreAboutMeClose = document.querySelector(".close-popup");
+const modal = document.querySelector(".modal");
+const openModal = document.querySelector(".about-me-read-more");
+const closeModal = document.querySelector(".close-popup");
 
-readMoreAboutMe.addEventListener("click", () => {
-  popupContainer.classList.add("show-popup");
+openModal.addEventListener("click", () => {
+  modal.showModal();
 });
-readMoreAboutMeClose.addEventListener("click", () => {
-  popupContainer.classList.remove("show-popup");
+closeModal.addEventListener("click", () => {
+  modal.close();
 });
-
-
 
 // ====================================================================
 //                          SHOW BLOG POPUP
@@ -215,10 +212,6 @@ close.addEventListener("click", () => {
   blogPopupContainer.classList.remove("show-popup");
 });
 
-
-
 // ====================================================================
 //                          BLOG POPUP
 // ====================================================================
-
-
