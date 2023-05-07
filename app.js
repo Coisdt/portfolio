@@ -201,15 +201,15 @@ closeModal.addEventListener("click", () => {
 //                          SHOW BLOG POPUP
 // ====================================================================
 
-const blogPopupContainer = document.querySelector(".blog-popup-container");
-const readMore = document.querySelector(".read-more");
-const close = document.querySelector(".close-blog-popup");
+const blogModal = document.querySelector(".blog-modal");
+const openBlogModal = document.querySelector(".read-more");
+const closeBlogModal = document.querySelector(".close-blog-modal");
 
-readMore.addEventListener("click", () => {
-  blogPopupContainer.classList.add("show-popup");
+openBlogModal.addEventListener("click", () => {
+  blogModal.showModal();
 });
-close.addEventListener("click", () => {
-  blogPopupContainer.classList.remove("show-popup");
+closeBlogModal.addEventListener("click", () => {
+  blogModal.close();
 });
 
 // ====================================================================

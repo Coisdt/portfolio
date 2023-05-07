@@ -1,11 +1,19 @@
 * {
   padding: 0;
   margin: 0;
-  display: grid;
+  /* display: grid; */
   color: var(--text-color);
   background-color: var(--background-color);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   box-sizing: border-box;
+}
+
+title {
+  display: none;
+}
+
+body {
+  display: grid;
 }
 
 :root {
@@ -465,13 +473,12 @@ h2 {
   height: 400px;
 }
 
-.modal[open]{
-display: grid;
+.modal[open] {
+  display: grid;
 }
 
-dialog::backdrop {
-  background-color: rgb(2, 24, 43, 0.75)
-
+.modal::backdrop {
+  background-color: rgb(2, 24, 43, 0.75);
 }
 
 button.close-popup {
@@ -622,7 +629,7 @@ BLOG SECTION
 
 .blog {
   position: relative;
-  height: 100%;
+  height: 900px;
   width: 0 auto;
   display: grid;
   padding: 2rem;
@@ -664,35 +671,31 @@ BLOG SECTION
   justify-self: center;
 }
 
-.blog-popup-container {
-  position: absolute;
+.blog-modal {
   display: none;
-  width: 100%;
-  height: 100%;
-  justify-self: center;
+  padding: 20px;
   border: 2px solid var(--special-color);
-  overflow: hidden;
-  place-items: center;
-  /* background-color: var(--text-color); */
-  filter: blur(50%);
+  position: fixed;
+  top: 200px;
+  right: 200px;
+  bottom: 0;
+  left: 200px;
+  z-index: 10040;
+  height: 400px;
 }
 
-.blog-popup {
+.blog-modal[open] {
   display: grid;
-  padding: 50px;
-  place-items: center;
-  height: 70%;
-  width: 70%;
-  border: 2px solid var(--special-color);
 }
 
-.close-blog-popup {
+.blog-modal::backdrop {
+  background-color: rgb(2, 24, 43, 0.75);
+}
+
+button.close-blog-modal {
   display: grid;
   justify-self: right;
-}
-
-.show-popup {
-  display: grid;
+  border: none;
 }
 
 /* 
@@ -702,7 +705,7 @@ BLOG SECTION
 */
 
 .contact {
-  height: 100%;
+  height: 900px;
   display: grid;
   padding: 2rem;
   margin: 2rem;
