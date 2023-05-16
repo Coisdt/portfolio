@@ -34,6 +34,7 @@
     <li><a href="#contact" class="nav-link btn"  style="color: white; text-decoration: none;">Contact Me</a></li>
   </ul>
 </div>
+</div>
 </header>
 <!--
 ====================================================================
@@ -43,10 +44,15 @@
 <div class="sidebar-overlay">
   <!-- add show here -->
   <aside class="sidebar"> 
+    <div class="sidebar-nav">
+<div class="logo-container">
+      <img src="./images/logo2.jpg" alt="">
+      </div>
     <div class="sidebar-close-btn">
       <span class="sidebar-close">
        <i class="fa-solid fa-x" style="font-size: 2rem;"></i>
       </span>
+    </div>
     </div>
     <!-- design div --><div class="design"></div><!-- end of design div -->
     <ul class="toggle-nav-links">
@@ -72,15 +78,16 @@
 <section class="hero">
   <div class="hero-container">
     <div class="introduction-container">
-      <div><h3>// Hello World, I'm</h3></div>
-      <div><h1>Francois du Toit</h1></div>
-<!-- design div --><div class="design"></div><!-- end of design div -->
+      <div class="intro-h3"><h3>// Hello World, I'm</h3></div>
+      <div class="intro-h1"><h1>Francois du Toit</h1></div>
+<!-- design div --><div class="design-hero"></div><!-- end of design div -->
 <div><h2>Front-end Web developer</h2></div>
 <div class="profile-img-container-small">
   <img class='intro-profile-img-small' src="./images/profile-small.png" alt="profile-img">
 </div>
       <div class="about-snippet"><h3>What I do:</h3><br><p >The <strong style="color: #0197f6">Tall Coder</strong> bringing 'towering' ideas to life - one website at a time!</p>
-    </div></div>
+    </div>
+  </div>
     <div class="website-links-container">
      <a href="https://github.com"><i class="icons fa-brands fa-github" style="font-size: 4em;"></i></a>
       <a href="https://linkedin.com"><i class="fa-brands fa-linkedin" style="font-size: 4em;"></i></a>
@@ -91,7 +98,11 @@
   <div class="profile-img-container">
     <img class='intro-profile-img' src="./images/profile-removebg-preview.png" alt="profile-img">
   </div>
-  <!-- SCROLL UP BTN -->
+<!--
+====================================================================
+                           SCROLL UP BTN
+====================================================================
+-->
   <div class="scroll-up-btn">
     <i class="fas fa-arrow-up up-btn btn" style="font-size: 2rem"></i>
 </section>
@@ -273,22 +284,24 @@
  -->
 <!-- make a featured block thats bigger than the rest, then previous blogs under and smaller -->
 <section class="blog" id="blog">
-  <div><h1>My blog posts</h1></div>
-  <div class="blog-container">
-<!-- blog entry -->
+  <div class="blog-center">
+    <div><h1>My blog posts</h1></div>
+    <div class="blog-container">
+  <!-- blog entry -->
+    </div>
+    <!-- read all blogs btn -->
+    <div class="all-blogs-div">
+      <a href="./blogs.html"><i class="read-all-blogs btn">Read all blogs</i></a>
+    </div>
+  
+    <!-- popup -->
+    <dialog class="blog-modal">
+        <button class="close-blog-modal"><i class=" fa-solid fa-x"></i></button>
+        <h1>More of this blog</h1>
+        <p>
+        Something is coming </p>
+      </dialog>
   </div>
-  <!-- read all blogs btn -->
-  <div class="all-blogs-div">
-    <a href="./blogs.html"><i class="read-all-blogs btn">Read all blogs</i></a>
-  </div>
-
-  <!-- popup -->
-  <dialog class="blog-modal">
-      <button class="close-blog-modal"><i class=" fa-solid fa-x"></i></button>
-      <h1>More of this blog</h1>
-      <p>
-      Something is coming </p>
-    </dialog>
   </section>
   
 

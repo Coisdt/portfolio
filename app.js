@@ -14,6 +14,7 @@ closeBtn.addEventListener("click", () => {
   sidebar.classList.remove("show");
 });
 
+
 // ====================================================================
 //                           SCROLL TO LINKS
 // ====================================================================
@@ -72,12 +73,18 @@ window.addEventListener("scroll", () => {
 window.addEventListener("scroll", () => {
   const scrollHeight = window.pageYOffset;
   const header = document.querySelector("header");
-  if (scrollHeight > 400) {
+  const sidebarOpen = isSidebarOpen()
+  if (scrollHeight > 400 && !sidebarOpen) {
     header.classList.add("fixed-nav");
-  } else {
+  } 
+  else {
     header.classList.remove("fixed-nav");
   }
 });
+
+const isSidebarOpen = ()=>{
+sidebar === true
+}
 
 // ====================================================================
 //                           COPYRIGHT DATE
