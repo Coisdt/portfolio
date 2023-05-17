@@ -43,6 +43,33 @@ navLinks.forEach((link) => {
   });
 });
 
+
+// ====================================================================
+//                           SCROLL TO SECTIONS (SIDEBAR)
+// ====================================================================
+
+const toggleNavLinks = document.querySelectorAll(".toggle-nav-link");
+
+toggleNavLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+    const fixedNavHeight =
+      document.querySelector(".navigation-bar").offsetHeight;
+
+    if (targetSection) {
+      const targetPosition = targetSection.offsetTop - fixedNavHeight;
+      // console.log(targetSection);
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+      sidebar.classList.remove("show");
+    }
+  });
+});
+
 // ====================================================================
 //                           SCROLL TO TOP
 // ====================================================================
