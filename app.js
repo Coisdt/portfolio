@@ -14,31 +14,32 @@ closeBtn.addEventListener("click", () => {
   sidebar.classList.remove("show");
 });
 
-
 // ====================================================================
-//                           SCROLL TO LINKS
+//                           SCROLL TO SECTIONS
 // ====================================================================
 
-const navLinks = document.querySelectorAll(".nav-links");
 const linkContainer = document.querySelector(".nav-links");
 const nav = document.querySelector(".navigation-bar");
 const navBar = document.querySelector(".navigation-bar");
 
-navLinks.forEach(function (btn) {
-  btn.addEventListener("click", (e) => {
-    const ID = e.currentTarget.getAttribute("href").slice(1);
-    // console.log(ID);
-    const element = document.getElementById(ID);
-    // console.log(element);
+const navLinks = document.querySelectorAll(".nav-link");
 
-    let position = element.offsetTop - navHeight;
-    // console.log(position);
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+    const fixedNavHeight =
+      document.querySelector(".navigation-bar").offsetHeight;
 
-    window.scrollTo({
-      left: 0,
-      top: position,
-    });
-    linkContainer.style.height = 0;
+    if (targetSection) {
+      const targetPosition = targetSection.offsetTop - fixedNavHeight;
+      // console.log(targetSection);
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
   });
 });
 
@@ -73,18 +74,17 @@ window.addEventListener("scroll", () => {
 window.addEventListener("scroll", () => {
   const scrollHeight = window.pageYOffset;
   const header = document.querySelector("header");
-  const sidebarOpen = isSidebarOpen()
+  const sidebarOpen = isSidebarOpen();
   if (scrollHeight > 400 && !sidebarOpen) {
     header.classList.add("fixed-nav");
-  } 
-  else {
+  } else {
     header.classList.remove("fixed-nav");
   }
 });
 
-const isSidebarOpen = ()=>{
-sidebar === true
-}
+const isSidebarOpen = () => {
+  sidebar === true;
+};
 
 // ====================================================================
 //                           COPYRIGHT DATE

@@ -242,17 +242,17 @@ SIDEBAR SECTION
   }
 }
 
-@media (sidebar){
-.fixed-nav{
-  display: none;
-}
+@media (sidebar) {
+  .fixed-nav {
+    display: none;
+  }
 }
 
 /* ------------DESIGN DIV----------------- */
 .design {
   display: grid;
   height: 10px;
-  width: 100vw;
+  width: 100%;
   background-color: var(--special-color);
 }
 @media screen and (max-width: 760px) {
@@ -713,7 +713,7 @@ button.close-popup {
   gap: 3rem;
   justify-content: center;
   align-items: center;
-  display: none;
+  display: grid;
 }
 
 .something-is-coming {
