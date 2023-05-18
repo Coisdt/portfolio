@@ -65,7 +65,11 @@ toggleNavLinks.forEach((link) => {
         behavior: "smooth",
       });
       sidebar.classList.remove("show");
+      // if(sidebar){
+      //   navBar.classList.remove('fixed-navbar')
+      // }
     }
+
   });
 });
 
@@ -102,9 +106,11 @@ window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   if (scrollHeight > 400) {
     header.classList.add("fixed-nav");
-  } else {
+  } 
+  else {
     header.classList.remove("fixed-nav");
   }
+ 
 });
 // ====================================================================
 //                           COPYRIGHT DATE

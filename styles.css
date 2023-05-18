@@ -190,7 +190,7 @@ SIDEBAR SECTION
     grid-template-rows: 10fr;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
     max-width: 100%;
     top: 0;
@@ -215,6 +215,10 @@ SIDEBAR SECTION
     font-size: 3rem;
     width: 100%;
   }
+
+.toggle-nav-links{
+  height: 100vh;
+}
 
   .toggle-nav-link {
     color: var(--highlight-color);
@@ -241,7 +245,7 @@ SIDEBAR SECTION
   .show {
     opacity: 1;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     display: grid;
   }
 }
@@ -404,6 +408,7 @@ h2 {
     place-items: center;
     margin: 0 auto;
     height: 100%;
+    padding: 1rem;
   }
 
   .hero-container {
@@ -583,6 +588,7 @@ button.close-popup {
     width: 100vw;
     place-items: center;
     margin: 0 auto;
+    padding: 1rem;
   }
 
   .about-container {
@@ -592,33 +598,46 @@ button.close-popup {
   }
 
   .about-card {
-    height: 800px;
+    height: fit-content;
+    gap: 2rem;
+  }
+
+  .about-card h1{
+    line-height: 50px;
   }
 
   .skills {
     height: 250px;
+    width: 100%;
+    gap: 0;
+    padding: 0;
   }
-
+  
   .skills-center {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    width: 100%;
     gap: 0px;
   }
   .skill-container {
-    width: 6rem;
+    width: 100%;
+    height: fit-content;
+    justify-self: center;
+    /* width: fit-content; */
   }
   .tool-container {
-    width: 6rem;
+    width: 100%;
+    gap: 0;
   }
   .tools {
     height: 250px;
   }
 
-  .skills-center {
-    display: flex;
-  }
   .tools-center {
     gap: 0px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -689,6 +708,7 @@ button.close-popup {
     place-items: center;
     margin: 0 auto;
     height: 100%;
+    padding: 1rem;
   }
 
   .projects-container {
@@ -716,6 +736,10 @@ button.close-popup {
     display: block;
     height: 100%;
     width: 100%;
+  }
+
+  .all-projects-btn {
+    height: fit-content;
   }
 }
 
@@ -847,6 +871,7 @@ button.close-blog-modal {
     place-items: center;
     margin: 0 auto;
     height: 100%;
+    padding: 1rem;
   }
 
   .blog-container {
