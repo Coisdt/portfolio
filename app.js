@@ -69,7 +69,6 @@ toggleNavLinks.forEach((link) => {
       //   navBar.classList.remove('fixed-navbar')
       // }
     }
-
   });
 });
 
@@ -106,11 +105,9 @@ window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   if (scrollHeight > 400) {
     header.classList.add("fixed-nav");
-  } 
-  else {
+  } else {
     header.classList.remove("fixed-nav");
   }
- 
 });
 // ====================================================================
 //                           COPYRIGHT DATE
@@ -140,27 +137,33 @@ profileFoto.addEventListener("mouseout", () => {
 //                          EMAIL SETUP
 // ====================================================================
 
-// const submission = document
-//   .getElementById("submit")
-//   .addEventListener("submit", function (event) {
-//     event.preventDefault(); // Prevent form submission
+const form = document.getElementById("submit"); // Assuming the form has the ID "submit"
 
-//     // Get form data
-//     const name = document.getElementById("name").value;
-//     const email = document.getElementById("email").value;
-//     const message = document.getElementById("message").value;
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent form submission
 
-//     // Create a mailto link
-//     var mailtoLink =
-//       "mailto: cois25@live.com" +
-//       "?subject=Message from: " +
-//       encodeURIComponent(name) +
-//       "&body=" +
-//       encodeURIComponent(message + "\n\nFrom: " + email);
+  // Get form data
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
 
-//     // Open the default email client
-//     window.location.href = mailtoLink;
-//   });
+  // Create a mailto link
+  var mailtoLink =
+    "mailto:cois25@live.com" +
+    "?subject=Website Message from: " +
+    encodeURIComponent(name) +
+    "&body=" +
+    encodeURIComponent(message + "\n\nFrom: " + email);
+
+  // Open the default email client
+  window.location.href = mailtoLink;
+  // alert("Thank you for your message! I'll be in touch soon.")
+  const contactDiv = document.querySelector(".contact-container");
+  setTimeout(() => {
+    contactDiv.innerHTML = `<div class="sent-message"></div>`;
+    contactDiv.textContent = `Thank you so much for your message. I'll be in touch soon.`;
+  }, 2000);
+});
 
 // ====================================================================
 //                              BLOG DATA

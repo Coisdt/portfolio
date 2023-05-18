@@ -216,9 +216,9 @@ SIDEBAR SECTION
     width: 100%;
   }
 
-.toggle-nav-links{
-  height: 100vh;
-}
+  .toggle-nav-links {
+    height: 100vh;
+  }
 
   .toggle-nav-link {
     color: var(--highlight-color);
@@ -315,7 +315,7 @@ SIDEBAR SECTION
 }
 /* 
 ====================================================================
-HERO SECTION
+                            HERO SECTION
 ====================================================================
 */
 
@@ -576,7 +576,7 @@ h2 {
   background-color: rgb(2, 24, 43, 0.75);
 }
 
-button.close-popup {
+.close-popup {
   display: grid;
   justify-self: right;
   border: none;
@@ -602,7 +602,7 @@ button.close-popup {
     gap: 2rem;
   }
 
-  .about-card h1{
+  .about-card h1 {
     line-height: 50px;
   }
 
@@ -612,7 +612,7 @@ button.close-popup {
     gap: 0;
     padding: 0;
   }
-  
+
   .skills-center {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -638,6 +638,24 @@ button.close-popup {
     gap: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .modal {
+    display: none;
+    padding: 20px;
+    border: 2px solid var(--special-color);
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10040;
+    height: 600px;
+  }
+  .close-popup {
+    display: grid;
+
+    border: none;
   }
 }
 
@@ -888,7 +906,7 @@ button.close-blog-modal {
 */
 
 .contact {
-  height: 900px;
+  height: auto;
   display: grid;
   padding: 2rem;
   margin: 2rem;
@@ -903,10 +921,12 @@ button.close-blog-modal {
 }
 
 .contact-container {
+  display: grid;
   border: 5px solid var(--special-color);
   padding: 2rem;
   width: 900px;
   justify-content: center;
+  font-size: 26px;
 }
 
 .contact-title {
@@ -938,6 +958,13 @@ button.close-blog-modal {
   font-size: 1.5rem;
   align-content: top;
   justify-self: center;
+}
+
+.sent-message {
+  height: 200px;
+  padding: 2rem;
+  margin: 2rem;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1000px) {
