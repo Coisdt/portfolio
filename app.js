@@ -15,7 +15,7 @@ closeBtn.addEventListener("click", () => {
 });
 
 // ====================================================================
-//                           SCROLL TO SECTIONS
+//                           SCROLL TO SECTIONS (navbar)
 // ====================================================================
 
 const linkContainer = document.querySelector(".nav-links");
@@ -42,7 +42,6 @@ navLinks.forEach((link) => {
     }
   });
 });
-
 
 // ====================================================================
 //                           SCROLL TO SECTIONS (SIDEBAR)
@@ -101,18 +100,12 @@ window.addEventListener("scroll", () => {
 window.addEventListener("scroll", () => {
   const scrollHeight = window.pageYOffset;
   const header = document.querySelector("header");
-  const sidebarOpen = isSidebarOpen();
-  if (scrollHeight > 400 && !sidebarOpen) {
+  if (scrollHeight > 400) {
     header.classList.add("fixed-nav");
   } else {
     header.classList.remove("fixed-nav");
   }
 });
-
-const isSidebarOpen = () => {
-  sidebar === true;
-};
-
 // ====================================================================
 //                           COPYRIGHT DATE
 // ====================================================================
@@ -141,9 +134,27 @@ profileFoto.addEventListener("mouseout", () => {
 //                          EMAIL SETUP
 // ====================================================================
 
-const submit = document.querySelector(".submit");
+// const submission = document
+//   .getElementById("submit")
+//   .addEventListener("submit", function (event) {
+//     event.preventDefault(); // Prevent form submission
 
-submit.addEventListener("click", () => {});
+//     // Get form data
+//     const name = document.getElementById("name").value;
+//     const email = document.getElementById("email").value;
+//     const message = document.getElementById("message").value;
+
+//     // Create a mailto link
+//     var mailtoLink =
+//       "mailto: cois25@live.com" +
+//       "?subject=Message from: " +
+//       encodeURIComponent(name) +
+//       "&body=" +
+//       encodeURIComponent(message + "\n\nFrom: " + email);
+
+//     // Open the default email client
+//     window.location.href = mailtoLink;
+//   });
 
 // ====================================================================
 //                              BLOG DATA
