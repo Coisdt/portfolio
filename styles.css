@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100vw;
+}
+/* body{
+  width: auto;
+  box-sizing: border-box;
+} */
 title {
   display: none;
 }
@@ -144,12 +151,12 @@ p {
   }
 
   .navigation-bar {
-    display: inline-grid;
-    width: 100vw;
+    display: grid;
+    width: 100%;
     height: auto;
     gap: 0;
     justify-content: space-around;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
   }
 
   .logo-container {
@@ -159,6 +166,7 @@ p {
 
   .logo-container img {
     height: 2rem;
+    width: auto;
     justify-content: flex-start;
   }
   .toggle-nav-btn {
@@ -328,13 +336,14 @@ SIDEBAR SECTION
   justify-content: center;
   border-bottom: 10px #854d27;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
 }
 
 .hero-container {
   display: grid;
   justify-content: space-around;
+  width: 100%;
 }
 
 .introduction-container {
@@ -399,6 +408,14 @@ h2 {
 .hero h2 {
   color: var(--highlight-color);
 }
+
+
+
+/* @media screen and (max-width:1970){
+.hero{
+  width: 100%;
+}
+} */
 
 /* small screen */
 @media screen and (max-width: 770px) {
@@ -560,12 +577,26 @@ h2 {
   padding: 20px;
   border: 2px solid var(--special-color);
   position: fixed;
-  top: 200px;
-  right: 200px;
-  bottom: 0;
-  left: 200px;
+  top: 80px;
+  right: 150px;
+  bottom: 150px;
+  left: 150px;
   z-index: 10040;
-  height: 400px;
+  height: fit-content;
+}
+
+.float-img {
+  border: 2px solid var(--special-color);
+  float: right;
+  position: relative;
+  top: 120px;
+  height: 350px;
+  padding: 10px;
+}
+
+.modal-container p {
+  padding: 10px;
+  margin-right: 500px;
 }
 
 .modal[open] {
@@ -580,6 +611,21 @@ h2 {
   display: grid;
   justify-self: right;
   border: none;
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .float-img {
+    position: static;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+    width: 500px;
+  }
+
+  .modal {
+    height: 800px;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -654,8 +700,24 @@ h2 {
   }
   .close-popup {
     display: grid;
-
+    justify-content: right;
     border: none;
+    width: 100%;
+  }
+
+  .float-img {
+    position: static;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    float: none;
+    /* height: 250px; */
+    width: 100%;
+    height: auto;
+  }
+
+  .modal p {
+    float: none;
+    margin-right: 0;
   }
 }
 
