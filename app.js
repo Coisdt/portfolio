@@ -15,14 +15,26 @@ closeBtn.addEventListener("click", () => {
 });
 
 // ====================================================================
+//                           TOGGLE NAVBAR
+// ====================================================================
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.forEach((otherLink) => {
+      otherLink.classList.remove("underline-when-there");
+    });
+    link.classList.add("underline-when-there");
+  });
+});
+
+// ====================================================================
 //                           SCROLL TO SECTIONS (navbar)
 // ====================================================================
 
 const linkContainer = document.querySelector(".nav-links");
 const nav = document.querySelector(".navigation-bar");
 const navBar = document.querySelector(".navigation-bar");
-
-const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {

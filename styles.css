@@ -92,6 +92,7 @@ p {
   align-items: center;
   height: 6rem;
   grid-template-columns: 1fr 1fr;
+  transition: 2000ms;
 }
 
 .logo-container img {
@@ -107,6 +108,11 @@ p {
   scroll-behavior: smooth;
   height: auto;
   z-index: 999;
+  transition: 1000ms;
+}
+
+header {
+  transition: 2000ms;
 }
 
 .nav-links,
@@ -129,6 +135,11 @@ p {
 
 .nav-link:hover,
 .toggle-nav-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--special-color);
+}
+
+.underline-when-there{
   text-decoration: underline;
   text-decoration-color: var(--special-color);
 }
@@ -493,7 +504,7 @@ h2 {
   width: 100%;
   align-items: center;
   gap: 50px;
-  height: 800px;
+  height: 700px;
 }
 
 .about-card {
@@ -874,7 +885,7 @@ h2 {
   padding-top: 0;
 }
 
-.challenge-about-snippet h3{
+.challenge-about-snippet h3 {
   text-decoration: underline;
 }
 .challenge-btns {
