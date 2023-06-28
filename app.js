@@ -163,18 +163,18 @@ date.innerHTML = new Date().getFullYear();
 //                           SWOP FOTO
 // ====================================================================
 
-const profileFoto = document.querySelector(".intro-profile-img");
+// const profileFoto = document.querySelector(".intro-profile-img");
 
-profileFoto.addEventListener("mouseover", () => {
-  profileFoto.setAttribute(
-    "src",
-    "./images/Chamuné___Francois_Wedding_0227-removebg-preview.png"
-  );
-});
+// profileFoto.addEventListener("mouseover", () => {
+//   profileFoto.setAttribute(
+//     "src",
+//     "./images/Chamuné___Francois_Wedding_0227-removebg-preview.png"
+//   );
+// });
 
-profileFoto.addEventListener("mouseout", () => {
-  profileFoto.setAttribute("src", "./images/profile-removebg-preview.png");
-});
+// profileFoto.addEventListener("mouseout", () => {
+//   profileFoto.setAttribute("src", "./images/profile-removebg-preview.png");
+// });
 
 // ====================================================================
 //                          EMAIL SETUP
@@ -333,6 +333,3 @@ closeModal.addEventListener("click", () => {
 //   blogModal.close();
 // });
 
-// ====================================================================
-//                          BLOG POPUP
-// ====================================================================

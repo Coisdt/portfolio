@@ -71,6 +71,10 @@ p {
   cursor: pointer;
 }
 
+strong{
+  color: var(--highlight-color);
+}
+
 .btn:hover {
   box-shadow: 7px 5px 56px -14px #854d27;
   background: #854d27;
@@ -90,7 +94,7 @@ p {
   margin: 0 auto;
   max-width: 1600px;
   align-items: center;
-  height: 6rem;
+  height: fit-content;
   grid-template-columns: 1fr 1fr;
   /* transition: 2000ms; */
 }
@@ -108,10 +112,6 @@ p {
   scroll-behavior: smooth;
   height: 110px;
   z-index: 999;
-  /* transition: 2000ms; */
-}
-
-header {
   /* transition: 2000ms; */
 }
 
@@ -349,6 +349,7 @@ SIDEBAR SECTION
   align-items: center;
   /* width: 100vw; */
   margin: 0 auto;
+  gap: 15rem;
 }
 
 .hero-container {
@@ -517,18 +518,19 @@ h2 {
   align-items: center;
   justify-items: center;
   grid-template-rows: 1fr 6fr;
-  line-height: 35px;
+  line-height: 25px;
 }
 
 .skills {
   display: grid;
-  grid-template-rows: 1fr 6fr;
+  grid-template-rows: 1fr 1fr 2fr;
   justify-content: center;
   gap: 2rem;
   height: 500px;
   border: 2px solid var(--special-color);
   padding: 25px;
   align-items: center;
+  line-height: 25px;
 }
 
 .tools {
@@ -571,7 +573,7 @@ h2 {
   height: 3.7rem;
 }
 .skills-center {
-  display: grid;
+  display: flex;
   gap: 2rem;
   /* border: 2px solid; */
 }
@@ -580,7 +582,7 @@ h2 {
   gap: 2rem;
   /* border: 2px solid; */
 }
-
+/* ================================= about modal */
 .modal {
   display: none;
   padding: 20px;
@@ -596,6 +598,7 @@ h2 {
 
 .float-img {
   border: 2px solid var(--special-color);
+  border-radius: 50%;
   float: right;
   position: relative;
   top: 120px;
@@ -604,8 +607,8 @@ h2 {
 }
 
 .modal-container p {
-  padding: 10px;
-  margin-right: 500px;
+  padding: 5px;
+  margin-right: 400px;
 }
 
 .modal[open] {
