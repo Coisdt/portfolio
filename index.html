@@ -80,20 +80,24 @@
     <div class="introduction-container">
       <div class="intro-h3"><h3>// Hello World, I'm</h3></div>
       <div class="intro-h1"><h1>Francois du Toit</h1></div>
-<!-- design div --><div class="design-hero"></div><!-- end of design div -->
-<div><h2>Front-end Web developer</h2></div>
-<div class="profile-img-container-small">
-  <img class='intro-profile-img-small' src="./images/profile-small.png" alt="profile-img">
-</div>
+
+      <!-- design div --><div class="design-hero"></div><!-- end of design div -->
+      <div><h2>Front-End Web Developer</h2></div>
+    <div class="profile-img-container-small">
+      <img class='intro-profile-img-small' src="./images/profile-small.png" alt="profile-img">
+    </div>
       <div class="about-snippet"><h3>What I do:</h3><br><p >The <strong style="color: #0197f6">Tall Coder</strong> bringing 'towering' ideas to life - one website at a time!</p>
     </div>
-  </div>
+    </div>
     <div class="website-links-container">
      <a href="https://github.com" target="_blank"><i class="icons fa-brands fa-github" style="font-size: 4em;"></i></a>
       <a href="https://linkedin.com/in/francois-du-toit-324abbab/" target="_blank"><i class="fa-brands fa-linkedin" style="font-size: 4em;"></i></a>
      
     </div>
-      <div class="introduction-btn"><button class="introduction-btn btn"><a open href="./Francois du Toit - CV.docx" target="_blank"></a>View my CV</button></div>
+      <div class="introduction-btn">
+        <button class="introduction-btn btn"><a open href="#" target="_blank"></a>View my CV</button>
+        <button class="introduction-btn btn"><a open href="#" target="_blank"></a>Get In Touch</button>
+      </div>
   </div>
   <div class="profile-img-container">
     <img class='intro-profile-img' src="./images/profile-removebg-preview.png" alt="profile-img">
@@ -360,10 +364,14 @@
  -->
 <!-- make a featured block thats bigger than the rest, then previous blogs under and smaller -->
 <section class="blog" id="blog">
-  <div class="blog-center">
-    <div><h1>My blog posts</h1></div>
+  <div class="blogs-center">
+    <div>
+      <h1 class="blogs-center-title">My blog</h1>
+      <h3 class="blogs-center-description">View my latest blog posts.</h3>
+    </div>
+
     <div class="blog-container">
-  <!-- blog entry -->
+  <!-- blog cards -->
     </div>
     <!-- read all blogs btn -->
     <div class="all-blogs-div">
@@ -372,10 +380,11 @@
   
     <!-- popup -->
     <dialog class="blog-modal">
+       
+      <div class="blog-modal-container">
+        <!-- full blog view --> 
         <button class="close-blog-modal"><i class=" fa-solid fa-x"></i></button>
-        <h1>More of this blog</h1>
-        <p>
-        Something is coming </p>
+      </div>
       </dialog>
   </div>
   </section>
@@ -398,7 +407,7 @@
     <form action="submit" class="contact-form" id="submit">
       <input type="text" class="input" placeholder="Your Name" id="name">
       <input type="email" class="input" placeholder="Your Email" id="email">
-      <input type="number" class="input" placeholder="Your Phone Number">
+      <input type="tel" class="input" placeholder="Your Phone Number" maxlength="10" minlength="10" pattern="[0-9]">
       <textarea rows="4" class="input text-area" placeholder="Write your message here..." id="message"></textarea>
         <button class="submit btn">Submit</button>
       </form>

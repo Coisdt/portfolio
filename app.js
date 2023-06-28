@@ -1,5 +1,5 @@
 // ====================================================================
-//                           TOGGLE NAVBAR
+//                           TOGGLE SIDEBAR
 // ====================================================================
 
 const toggleNav = document.querySelector(".toggle-nav-btn");
@@ -15,18 +15,22 @@ closeBtn.addEventListener("click", () => {
 });
 
 // ====================================================================
-//                           TOGGLE NAVBAR
+//                     ADD UNDERLINE FOR EACH LINK CLICK
 // ====================================================================
 const navLinks = document.querySelectorAll(".nav-link");
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.forEach((otherLink) => {
-      otherLink.classList.remove("underline-when-there");
+function navClicked() {
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((otherLink) => {
+        otherLink.classList.remove("underline-when-there");
+      });
+      link.classList.add("underline-when-there");
     });
-    link.classList.add("underline-when-there");
   });
-});
+}
+
+navClicked();
 
 // ====================================================================
 //                           SCROLL TO SECTIONS (navbar)
@@ -54,6 +58,33 @@ navLinks.forEach((link) => {
     }
   });
 });
+
+// =============underline link when scrolling -- start
+// still does not work
+const allSections = document.querySelectorAll(".section");
+
+window.onscroll = () => {
+  allSections.forEach((section) => {
+    // console.log(section);
+    const top = window.scrollY;
+    const offset = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = nav.querySelector(".nav-link");
+
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((link) => {
+        link.classList.remove("underline-when-there");
+      });
+
+      const targetLink = link.querySelector(id);
+      if (targetLink) {
+        targetLink.classList.add("underline-when-there");
+      }
+    }
+  });
+};
+
+// // =============underline link when scrolling -- end
 
 // ====================================================================
 //                           SCROLL TO SECTIONS (SIDEBAR)
@@ -183,7 +214,8 @@ form.addEventListener("submit", function (event) {
 
 const blogs = [
   {
-    blogNumber: 5,
+    blogNumber: 4,
+    img: "./images/..",
     id: "New Blog",
     blogDate: "2 January 2023",
     blogTitle: "How amazing is this!!!",
@@ -191,24 +223,19 @@ const blogs = [
     blogPost: "lorem100",
   },
   {
-    blogNumber: 4,
-    id: "Previously",
-    blogDate: "6 February 2023",
-    blogTitle: "Cannot believe this!!!",
-    blogSnippet: "Wow im super excited that this works",
-    blogPost: "lorem100",
-  },
-  {
     blogNumber: 3,
+    img: "./images/..",
     id: "Previously",
     blogDate: "6 February 2023",
     blogTitle: "Cannot believe this!!!",
     blogSnippet: "Wow im super excited that this works",
-    blogPost: "lorem100",
+    blogPost: "this one worked!",
   },
+
   {
     blogNumber: 2,
     id: "Previously",
+    img: "./images/..",
     blogDate: "6 February 2023",
     blogTitle: "Cannot believe this!!!",
     blogSnippet: "Wow im super excited that this works",
@@ -217,6 +244,7 @@ const blogs = [
   {
     blogNumber: 1,
     id: "Previously",
+    img: "./images/..",
     blogDate: "1 February 2023",
     blogTitle: "Cannot believe this!!!",
     blogSnippet: "HEEEEEELLLLOOOOOOO world!!!!!",
@@ -225,24 +253,50 @@ const blogs = [
 ];
 
 // ====================================================================
-//                             SHOW BLOGS DYN
+//                             SHOW BLOGS DYNAMICALLY
 // ====================================================================
 const blogCard = document.querySelector(".blog-container");
 
+// ================================fetch blog post info from data
 const fetchBlog = (blogs) => {
   blogs.forEach((blog) => {
-    const { blogNumber, id, blogDate, blogTitle, blogSnippet } = blog;
-    // console.log(blogNumber);
-    // const article = document.querySelector(".blog-card");
+    const { blogNumber, id, blogDate, blogTitle, blogSnippet, img, blogPost } =
+      blog;
     const article = document.createElement("article");
     article.classList.add("blog-card");
     article.innerHTML = `<h4 class="featured"><em>${id}</em></h4>
     <h2 class="blog-number">Blog #${blogNumber}</h2>
+    <img class="blog-img" src="${img}" alt="blog img">
     <h3 class="blog-date">${blogDate}</h2>
     <h3 class="blog-title">${blogTitle}</h3>
     <p class="blog-snippet">${blogSnippet}</p>
     <button class="read-more btn" id=${blogNumber}>Read</button>`;
     blogCard.appendChild(article);
+    // const fullArticle = document.createElement("article");
+
+    // ============================= blog modal open for each blog post
+
+    const blogModal = document.querySelector(".blog-modal");
+    const openBlogModal = document.getElementById(blogNumber);
+    const closeBlogModal = blogModal.querySelector(".close-blog-modal");
+
+    openBlogModal.addEventListener("click", () => {
+      blogModal.showModal();
+      blogModal.innerHTML = `
+      <button class="close-blog-modal-btn"><i class="close-blog-modal fa-solid fa-x"></i></button><h4 class="modal-featured"><em>${id}</em></h4>
+      <h2 class="modal-blog-number">Blog #${blogNumber}</h2>
+      <img class="modal-blog-img" src="${img}" alt="blog img">
+      <h3 class="modal-blog-date">${blogDate}</h2>
+      <h3 class="modal-blog-title">${blogTitle}</h3>
+      <p class='modal-blog-post'>${blogPost}<p>
+      `;
+    });
+    document.addEventListener("click", (event) => {
+      if (event.target.matches(".close-blog-modal")) {
+        console.log("Close button clicked");
+        blogModal.close();
+      }
+    });
   });
 };
 
@@ -267,16 +321,17 @@ closeModal.addEventListener("click", () => {
 //                          SHOW BLOG POPUP
 // ====================================================================
 
-const blogModal = document.querySelector(".blog-modal");
-const openBlogModal = document.querySelector(".read-more");
-const closeBlogModal = document.querySelector(".close-blog-modal");
+// const blogModal = document.querySelector(".blog-modal");
 
-openBlogModal.addEventListener("click", () => {
-  blogModal.showModal();
-});
-closeBlogModal.addEventListener("click", () => {
-  blogModal.close();
-});
+// const openBlogModal = document.getElementById(blogNumber);
+// const closeBlogModal = document.querySelector(".close-blog-modal");
+
+// openBlogModal.addEventListener("click", () => {
+//   blogModal.showModal();
+// });
+// closeBlogModal.addEventListener("click", () => {
+//   blogModal.close();
+// });
 
 // ====================================================================
 //                          BLOG POPUP
