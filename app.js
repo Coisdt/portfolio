@@ -61,28 +61,29 @@ navLinks.forEach((link) => {
 
 // =============underline link when scrolling -- start
 // still does not work
-const allSections = document.querySelectorAll(".section");
+function onScroll() {
+  const allSections = document.querySelectorAll(".section");
+  window.onscroll = () => {
+    allSections.forEach((section) => {
+      // console.log(section);
+      const top = window.scrollY;
+      const offset = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = nav.querySelector(".nav-link");
 
-window.onscroll = () => {
-  allSections.forEach((section) => {
-    // console.log(section);
-    const top = window.scrollY;
-    const offset = section.offsetTop;
-    const height = section.offsetHeight;
-    const id = nav.querySelector(".nav-link");
+      if (top >= offset && top < offset + height) {
+        navLinks.forEach((link) => {
+          link.classList.remove("underline-when-there");
+        });
 
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach((link) => {
-        link.classList.remove("underline-when-there");
-      });
-
-      const targetLink = link.querySelector(id);
-      if (targetLink) {
-        targetLink.classList.add("underline-when-there");
+        const targetLink = link.querySelector(id);
+        if (targetLink) {
+          targetLink.classList.add("underline-when-there");
+        }
       }
-    }
-  });
-};
+    });
+  };
+}
 
 // // =============underline link when scrolling -- end
 
@@ -332,4 +333,3 @@ closeModal.addEventListener("click", () => {
 // closeBlogModal.addEventListener("click", () => {
 //   blogModal.close();
 // });
-
