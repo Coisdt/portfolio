@@ -6,14 +6,12 @@
   background-color: var(--background-color);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   box-sizing: border-box;
+  /* overflow: hidden; */
+  /* max-width: 100vw; */
 }
 
 title {
   display: none;
-}
-
-body {
-  display: grid;
 }
 
 :root {
@@ -64,9 +62,6 @@ p {
   cursor: pointer;
 }
 
-strong {
-}
-
 .btn:hover {
   box-shadow: 7px 5px 56px -14px #854d27;
   background: #854d27;
@@ -78,34 +73,47 @@ strong {
                            NAVBAR SECTION
 ====================================================================
 */
-
-.navigation-bar {
+header {
   display: grid;
   justify-content: center;
-  gap: 5rem;
-  margin: 0 auto;
+}
+
+.navigation-bar {
+  /* display: grid; */
+  justify-content: center;
+  /* gap: 5rem; */
+  /* margin: 0 auto; */
   max-width: 1600px;
   align-items: center;
-  height: fit-content;
-  grid-template-columns: 1fr 1fr;
-  /* transition: 2000ms; */
+  /* height: fit-content; */
+  /* grid-template-columns: 1fr 1fr; */
+  flex-wrap: wrap;
+  display: flex;
+  /* justify-content: space-between; */
+  /* justify-content: stretch; */
 }
+/* 
+@media screen and (min-width: 1190px) {
+  .navigation-bar {
+    gap: 150px;
+  }
+} */
 
 .logo-container img {
   height: 3.5rem;
+  flex-shrink: 1;
 }
 
-.fixed-nav {
+/* .fixed-nav {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
   border-bottom: 10px solid #854d27;
   scroll-behavior: smooth;
   height: 110px;
   z-index: 999;
-  /* transition: 2000ms; */
-}
+} */
 
 .nav-links,
 .logo-container,
@@ -116,6 +124,7 @@ strong {
   gap: 2rem;
   font-size: 1.5rem;
   align-items: center;
+  /* justify-content: center; */
 }
 
 .nav-link {
@@ -144,7 +153,7 @@ strong {
   display: none;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 780px) {
   * {
     margin: 0 auto;
   }
@@ -190,7 +199,7 @@ SIDEBAR SECTION
   margin: 10px;
   gap: 2rem;
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 780px) {
   .sidebar {
     display: none;
     position: fixed;
@@ -264,17 +273,17 @@ SIDEBAR SECTION
 .design {
   display: grid;
   height: 10px;
-  width: 100%;
+  /* width: 100%; */
   background-color: var(--special-color);
 }
 
 .design-hero {
   display: grid;
   height: 3px;
-  width: 100%;
+  /* width: 100%; */
   background-color: var(--special-color);
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .design {
     margin: 0 auto;
     display: grid;
@@ -288,11 +297,10 @@ SIDEBAR SECTION
 ====================================================================
 */
 .scroll-up-btn {
-  display: grid;
+  display: none;
   justify-self: center;
   position: fixed;
   z-index: 3;
-  opacity: 0;
   border-radius: 50%;
   right: 90px;
   bottom: 150px;
@@ -304,10 +312,10 @@ SIDEBAR SECTION
 }
 
 .show {
-  opacity: 1;
+  display: grid;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 560px) {
   .scroll-up-btn {
     right: 10px;
     bottom: 10px;
@@ -320,24 +328,25 @@ SIDEBAR SECTION
 */
 
 .hero {
-  height: 800px;
+  /* height: 800px; */
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 2rem;
   margin: 2rem;
   justify-content: center;
   border-bottom: 10px #854d27;
   align-items: center;
-  width: 100%;
-  margin: 0 auto;
+  /* width: 100vw; */
+  /* margin: 0 auto; */
   /* gap: 30rem; */
-  max-width: 1580px;
+  /* max-width: 1580px; */
 }
 
 .hero-container {
   display: grid;
   justify-content: start;
-  width: 100%;
+  grid-template-rows: 1.5fr auto auto auto;
+  /* width: 100%; */
 }
 
 .introduction-container {
@@ -410,7 +419,7 @@ h2 {
 } */
 
 /* small screen */
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .hero {
     display: block;
     place-items: center;
@@ -617,7 +626,7 @@ h2 {
   padding-bottom: 1rem;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 560px) {
   .float-img {
     position: static;
     display: grid;
@@ -631,7 +640,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .about {
     display: block;
     place-items: center;
@@ -715,9 +724,9 @@ h2 {
     padding: 20px;
     border: 4px solid var(--special-color);
     position: fixed;
-    top: 100px;
+    top: 60px;
     right: 10px;
-    bottom: 0px;
+    bottom: 60px;
     left: 0px;
     z-index: 10040;
     height: 600px;
@@ -752,10 +761,9 @@ h2 {
 */
 
 .projects {
-  height: fit-content;
   display: grid;
   padding: 2rem;
-  margin: 2rem;
+  /* margin: 2rem; */
   gap: 2rem;
   justify-content: center;
   align-items: center;
@@ -763,8 +771,8 @@ h2 {
 }
 
 .projects-center {
-  display: grid;
-  gap: 2rem;
+  /* display: grid; */
+  /* gap: 2rem; */
 }
 
 .project-center-title {
@@ -828,11 +836,10 @@ h2 {
   font-size: 1.5rem;
   height: fit-content;
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .projects {
     display: grid;
     grid-template-rows: auto 1fr;
-    width: 100vw;
     place-items: center;
     margin: 0 auto;
     height: fit-content;
@@ -972,11 +979,11 @@ h2 {
   zoom: 150%;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .coding-challenges {
     /* display: grid; */
     grid-template-rows: auto 1fr;
-    width: 100vw;
+    /* width: 100vw; */
     place-items: center;
     margin: 0 auto;
     height: fit-content;
@@ -1014,37 +1021,25 @@ BLOG SECTION
 */
 
 .blog {
-  position: relative;
-  height: fit-content;
-  width: 0 auto;
-  display: grid;
   padding: 2rem;
-  margin: 2rem;
-  justify-content: center;
-  align-items: center;
-  /* display: none; */
 }
 
-.blogs-center-title,
 .blogs-center-description {
   padding-bottom: 15px;
 }
 
 .blog-container {
-  display: grid;
-  /* position: relative; */
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .blog-card {
   display: grid;
-  width: 100%;
-  height: 35rem;
   border: 2px solid var(--special-color);
-  justify-items: start;
   padding: 20px;
+  flex: 1 0 250px;
+  width: 350px;
 }
 
 .blog-card:hover {
@@ -1058,8 +1053,9 @@ BLOG SECTION
 .featured,
 .blog-number,
 .blog-img {
-  /* padding-bottom: 0.5rem; */
-  justify-self: center;
+  display: grid;
+  padding-bottom: 0.5rem;
+  justify-items: center;
   align-self: center;
   padding: 0;
 }
@@ -1068,9 +1064,14 @@ BLOG SECTION
   height: 10rem;
   width: 100%;
   border: 2px solid;
+  /* size: cover; */
+  background-image: url("./images/random.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .read-more {
+  display: grid;
   justify-self: center;
   height: 2.5rem;
   align-self: center;
@@ -1112,20 +1113,23 @@ BLOG SECTION
   border: none;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .blog {
-    display: block;
-    width: 100vw;
+    display: grid;
     place-items: center;
-    margin: 0 auto;
-    height: 100%;
+    /* margin: 0 auto; */
     padding: 1rem;
   }
 
+  .blog-center {
+    display: grid;
+  }
+
   .blog-container {
-    display: block;
-    height: 100%;
-    width: 100%;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+
+    gap: 5px;
   }
 }
 
@@ -1199,7 +1203,7 @@ BLOG SECTION
   justify-content: center;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .contact-info {
     display: grid;
     gap: 1rem;
@@ -1244,8 +1248,9 @@ BLOG SECTION
 */
 
 .page-footer {
+  /* display: grid; */
+  /* width: 100vw; */
   padding: 2rem;
-  display: grid;
 }
 
 .page-footer h2 {
@@ -1255,7 +1260,7 @@ BLOG SECTION
 
 .footer-links-container {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   height: 5rem;
   row-gap: 1rem;
   justify-content: center;
@@ -1270,7 +1275,7 @@ BLOG SECTION
 
 .footer-socials-container {
   display: grid;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   justify-content: center;
 }
@@ -1280,7 +1285,7 @@ BLOG SECTION
   justify-content: center;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   footer p {
     font-size: 15px;
   }

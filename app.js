@@ -10,6 +10,7 @@ toggleNav.addEventListener("click", () => {
   sidebar.classList.add("show");
 });
 
+
 closeBtn.addEventListener("click", () => {
   sidebar.classList.remove("show");
 });
@@ -245,13 +246,14 @@ const blogs = [
   {
     blogNumber: 1,
     id: "Previously",
-    img: "./images/..",
+    img: "./images/random.png",
     blogDate: "1 February 2023",
     blogTitle: "Cannot believe this!!!",
     blogSnippet: "HEEEEEELLLLOOOOOOO world!!!!!",
     blogPost: "lorem100",
   },
 ];
+
 
 // ====================================================================
 //                             SHOW BLOGS DYNAMICALLY
