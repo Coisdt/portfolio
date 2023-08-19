@@ -2,28 +2,27 @@
 //                           TOGGLE SIDEBAR
 // ====================================================================
 
-const toggleNav = document.querySelector(".toggle-nav-btn");
-const sidebar = document.querySelector(".sidebar");
-const closeBtn = document.querySelector(".sidebar-close");
+const toggleNavBtn = document.querySelector(".toggle-nav-btn");
+const navLinks = document.querySelector('.nav-links')
 
-toggleNav.addEventListener("click", () => {
-  sidebar.classList.add("show");
+toggleNavBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("show-nav");
 });
 
 
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.remove("show");
-});
+// closeBtn.addEventListener("click", () => {
+//   navLinks.classList.remove("show");
+// });
 
 // ====================================================================
 //                     ADD UNDERLINE FOR EACH LINK CLICK
 // ====================================================================
-const navLinks = document.querySelectorAll(".nav-link");
+const navLinkAll = document.querySelectorAll(".nav-link");
 
 function navClicked() {
-  navLinks.forEach((link) => {
+  navLinkAll.forEach((link) => {
     link.addEventListener("click", () => {
-      navLinks.forEach((otherLink) => {
+      navLinkAll.forEach((otherLink) => {
         otherLink.classList.remove("underline-when-there");
       });
       link.classList.add("underline-when-there");
