@@ -2,7 +2,7 @@
 //                           TOGGLE SIDEBAR
 // ====================================================================
 
-const toggleNavBtn = document.querySelector(".toggle-nav-btn");
+const toggleNavBtn = document.getElementById("toggle-nav-btn");
 const navLinks = document.querySelector('.nav-links')
 
 toggleNavBtn.addEventListener("click", () => {
