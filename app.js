@@ -3,21 +3,18 @@
 // ====================================================================
 
 const toggleNavBtn = document.getElementById("toggle-nav-btn");
-const navLinks = document.querySelector('.nav-links')
+const navLinks = document.querySelector(".nav-links");
+const navLinkAll = document.querySelectorAll(".nav-link");
+const fixedLinksHeight = navLinks.offsetTop - navLinks.offsetHeight;
+console.log(fixedLinksHeight);
 
 toggleNavBtn.addEventListener("click", () => {
   navLinks.classList.toggle("show-nav");
 });
 
-
-// closeBtn.addEventListener("click", () => {
-//   navLinks.classList.remove("show");
-// });
-
 // ====================================================================
 //                     ADD UNDERLINE FOR EACH LINK CLICK
 // ====================================================================
-const navLinkAll = document.querySelectorAll(".nav-link");
 
 function navClicked() {
   navLinkAll.forEach((link) => {
@@ -47,10 +44,12 @@ navLinkAll.forEach((link) => {
     const targetSection = document.querySelector(targetId);
     const fixedNavHeight =
       document.querySelector(".navigation-bar").offsetHeight;
+    navLinks.classList.remove("show-nav");
 
     if (targetSection) {
-      const targetPosition = targetSection.offsetTop - fixedNavHeight;
+      const targetPosition = targetSection.offsetTop - fixedLinksHeight;
       // console.log(targetSection);
+      console.log(targetPosition);
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth",
@@ -252,7 +251,6 @@ const blogs = [
     blogPost: "lorem100",
   },
 ];
-
 
 // ====================================================================
 //                             SHOW BLOGS DYNAMICALLY
