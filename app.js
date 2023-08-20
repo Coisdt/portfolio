@@ -40,7 +40,7 @@ const linkContainer = document.querySelector(".nav-links");
 const nav = document.querySelector(".navigation-bar");
 const navBar = document.querySelector(".navigation-bar");
 
-navLinks.forEach((link) => {
+navLinkAll.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const targetId = link.getAttribute("href");
