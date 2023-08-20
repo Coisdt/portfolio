@@ -488,6 +488,10 @@ h2 {
   height: fit-content;
 }
 
+.modal h1{
+  padding-top: 0;
+}
+
 .float-img {
   border: 2px solid var(--special-color);
   border-radius: 50%;
@@ -524,7 +528,7 @@ h2 {
   display: grid;
   justify-self: right;
   border: none;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
 }
 
 @media screen and (max-width: 560px) {
@@ -632,6 +636,10 @@ h2 {
     z-index: 10040;
     height: 600px;
   }
+
+  .modal h1{
+    font-size: 3.5rem;
+  }
   .close-popup {
     display: grid;
     justify-content: right;
@@ -640,17 +648,15 @@ h2 {
   }
 
   .float-img {
-    /* position: static; */
-    /* display: grid; */
     position: absolute;
     grid-template-rows: 1fr 1fr;
     background-color: var(--special-color);
     float: none;
-    top: 50px;
-    right: 20px;
-    /* height: 250px; */
-    width: 150px;
-    height: 150px;
+    top: 75px;
+    right: 15px;
+    width: 120px;
+    height: 120px;
+    padding: 0;
   }
 
   .modal p {
@@ -930,8 +936,15 @@ BLOG SECTION
   padding: 2rem;
 }
 
+.blogs-center-title{
+  display: grid;
+  justify-content: center;
+}
+
 .blogs-center-description {
+  display: grid;
   padding-bottom: 15px;
+  justify-content: center;
 }
 
 .blog-container {
@@ -1056,6 +1069,11 @@ BLOG SECTION
   padding: 2rem;
   justify-content: center;
   display: flex;
+}
+
+.contact-title h1{
+  display: grid;
+  justify-content: center;
 }
 
 .contact-container {

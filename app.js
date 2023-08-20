@@ -69,6 +69,7 @@ function onScroll() {
       const offset = section.offsetTop;
       const height = section.offsetHeight;
       const id = nav.querySelector(".nav-link");
+      // console.log(id);
 
       if (top >= offset && top < offset + height) {
         navLinks.forEach((link) => {
@@ -83,6 +84,8 @@ function onScroll() {
     });
   };
 }
+
+// onScroll()
 
 // // =============underline link when scrolling -- end
 
