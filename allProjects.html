@@ -6,9 +6,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
-  <h1>projects page</h1>
-    <script src="./app.js"></script>
+  <body id="top">
+    <!--
+====================================================================
+                           NAVBAR SECTION
+====================================================================
+    -->
+    <header>
+      <nav class="navigation-bar">
+        <div class="nav-center">
+          <!-- nav-header -->
+          <div class="nav-header">
+            <img src="./images/logo2.jpg" alt="logo" />
+            <i
+              id="toggle-nav-btn"
+              class="fa-solid fa-bars"
+              style="font-size: 2rem"
+            ></i>
+          </div>
+          <!-- design div -->
+          <!-- <div class="design"></div> -->
+          <!-- end of design div -->
+          <!-- nav-links -->
+          <ul class="nav-links">
+            <li><a type="button" href="#index.html" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#challenges" class="nav-link">Challenges</a></li>
+            <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li>
+              <a
+                href="#contact"
+                class="nav-link btn"
+                id="contact-btn"
+                style="color: white; text-decoration: none"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+
+          <!-- design div -->
+          <!-- <div class="design"></div> -->
+          <!-- end of design div -->
+        </div>
+      </nav>
+    </header>
+    <!-- 
+
+====================================================================
+                           HERO SECTION
+====================================================================
+ -->
+
+    <!--
+====================================================================
+                           ABOUT SECTION
+====================================================================
+-->
+
+    <!-- design div -->
+    <div class="design"></div>
+    <!-- end of design div -->
+
+    <!--
+====================================================================
+                           PROJECTS SECTION
+====================================================================
+ -->
+
+    <section class="projects section all-projects" id="projects">
+      <div class="projects-center">
+        <div class="projects-center-heading">
+          <div class="project-center-title"><h1>My Projects</h1></div>
+          <p class="project-center-description">
+            The following are complete and functional projects. I built these
+            projects from the ground up to demonstrate my skill as a front-end
+            developer. These projects cards include the stack used to build them
+            as well as the different features in the final version. Be on the
+            look out for the blog post for each of these projects to see how
+            they came to life!
+          </p>
+        </div>
+        <div class="projects-container">
+          <!-- start -->
+          <div class="project-card">
+            <h2>Project name</h2>
+            <!-- make a cover on canva for first slide, then screenshots of site from 2nd slide -->
+            <div class="project-screenshot">
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 1.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 2.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 3.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 4.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 5.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 6.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 7.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 8.png"
+                alt="proj-screenshot"
+              />
+              <img
+                class="proj-img"
+                src="./images/passwordGuardian/Screenshot 9.png"
+                alt="proj-screenshot"
+              />
+            </div>
+            <div class="swipe-screenshots">
+              <i class="fa-solid fa-arrow-left"></i>
+              <p>View Screenshots</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="project-about-snippet">
+              <h3>About the project:</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Voluptatibus, rerum aspernatur nobis quasi quod hic quae officia
+                possimus totam repudiandae provident voluptates architecto
+                mollitia pariatur omnis sint nisi inventore dolorem!
+              </p>
+            </div>
+            <div class="project-btns">
+              <a href="./fakeProject.html"
+                ><button class="project-view-live btn">View Live</button></a
+              >
+              <button class="project-git-code btn">Github Code</button>
+            </div>
+          </div>
+          <!-- end -->
+          <!-- start -->
+          <div class="project-card">
+            <h2>Project name</h2>
+            <div class="project-screenshot">
+              <img
+                class="proj-img"
+                src="./images/random.png"
+                alt="proj-screenshot"
+              />
+            </div>
+            <div class="swipe-screenshots">
+              <i class="fa-solid fa-arrow-left"></i>
+              <p>View Screenshots</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="project-about-snippet">
+              <h3>About the project:</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Voluptatibus, rerum aspernatur nobis quasi quod hic quae officia
+                possimus totam repudiandae provident voluptates architecto
+                mollitia pariatur omnis sint nisi inventore dolorem!
+              </p>
+            </div>
+            <div class="project-btns">
+              <a href="./fakeProject.html"
+                ><button class="project-view-live btn">View Live</button></a
+              >
+              <button class="project-git-code btn">Github Code</button>
+            </div>
+          </div>
+          <!-- end -->
+          <!-- start -->
+          <div class="project-card">
+            <h2>Project name</h2>
+            <div class="project-screenshot">
+              <img
+                class="proj-img"
+                src="./images/random.png"
+                alt="proj-screenshot"
+              />
+            </div>
+            <div class="swipe-screenshots">
+              <i class="fa-solid fa-arrow-left"></i>
+              <p>View Screenshots</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="project-about-snippet">
+              <h3>About the project:</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Voluptatibus, rerum aspernatur nobis quasi quod hic quae officia
+                possimus totam repudiandae provident voluptates architecto
+                mollitia pariatur omnis sint nisi inventore dolorem!
+              </p>
+            </div>
+            <div class="project-btns">
+              <a href="./fakeProject.html"
+                ><button class="project-view-live btn">View Live</button></a
+              >
+              <button class="project-git-code btn">Github Code</button>
+            </div>
+          </div>
+          <!-- end -->
+        </div>
+      </div>
+    </section>
+
+    <!-- design div -->
+    <div class="design"></div>
+    <!-- end of design div -->
+
+    <!--
+====================================================================
+                           FOOTER SECTION
+====================================================================
+-->
+
+    <footer class="page-footer">
+      <h2>Tall Guy Coder</h2>
+      <div class="footer-socials-container">
+        <i
+          class="fa-brands fa-instagram"
+          style="font-size: 2rem; border-radius: 50%"
+        ></i>
+      </div>
+      <div class="footer-links-container">
+        <a href="projects.html">View Projects</a>
+        <a href="about.html">About Me</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <p>Copyright &copy; <span id="date"></span>. Tall Guy Coder.</p>
+      <p>All rights reserved. Site credit.</p>
+    </footer>
   </body>
+  <script src="./app.js"></script>
 </html>

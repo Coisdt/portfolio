@@ -30,7 +30,7 @@ function navClicked() {
 navClicked();
 
 // ====================================================================
-//                           SCROLL TO SECTIONS (navbar)
+//                          SMOOTH SCROLL TO SECTIONS
 // ====================================================================
 
 const linkContainer = document.querySelector(".nav-links");
@@ -47,7 +47,7 @@ navLinkAll.forEach((link) => {
     navLinks.classList.remove("show-nav");
 
     if (targetSection) {
-      const targetPosition = targetSection.offsetTop - fixedLinksHeight;
+      const targetPosition = targetSection.offsetTop + fixedLinksHeight;
       // console.log(targetSection);
       console.log(targetPosition);
       window.scrollTo({
@@ -87,39 +87,8 @@ function onScroll() {
 
 // onScroll()
 
-// // =============underline link when scrolling -- end
-
 // ====================================================================
-//                           SCROLL TO SECTIONS (SIDEBAR)
-// ====================================================================
-
-const toggleNavLinks = document.querySelectorAll(".toggle-nav-link");
-
-toggleNavLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href");
-    const targetSection = document.querySelector(targetId);
-    const fixedNavHeight =
-      document.querySelector(".navigation-bar").offsetHeight;
-
-    if (targetSection) {
-      const targetPosition = targetSection.offsetTop - fixedNavHeight;
-      // console.log(targetSection);
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      });
-      sidebar.classList.remove("show");
-      // if(sidebar){
-      //   navBar.classList.remove('fixed-navbar')
-      // }
-    }
-  });
-});
-
-// ====================================================================
-//                           SCROLL TO TOP
+//                           SCROLL TO TOP BTN
 // ====================================================================
 const scrollUpBtn = document.querySelector(".scroll-up-btn");
 const scrollHeight = window.pageYOffset;
@@ -142,42 +111,13 @@ window.addEventListener("scroll", () => {
     scrollUpBtn.classList.remove("show");
   }
 });
-// ====================================================================
-//                           FIXED NAVBAR
-// ====================================================================
 
-window.addEventListener("scroll", () => {
-  const scrollHeight = window.pageYOffset;
-  const header = document.querySelector("header");
-  if (scrollHeight > 400) {
-    header.classList.add("fixed-nav");
-  } else {
-    header.classList.remove("fixed-nav");
-  }
-});
 // ====================================================================
 //                           COPYRIGHT DATE
 // ====================================================================
 
 const date = document.getElementById("date");
 date.innerHTML = new Date().getFullYear();
-
-// ====================================================================
-//                           SWOP FOTO
-// ====================================================================
-
-// const profileFoto = document.querySelector(".intro-profile-img");
-
-// profileFoto.addEventListener("mouseover", () => {
-//   profileFoto.setAttribute(
-//     "src",
-//     "./images/Chamuné___Francois_Wedding_0227-removebg-preview.png"
-//   );
-// });
-
-// profileFoto.addEventListener("mouseout", () => {
-//   profileFoto.setAttribute("src", "./images/profile-removebg-preview.png");
-// });
 
 // ====================================================================
 //                          EMAIL SETUP
@@ -319,19 +259,3 @@ openModal.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.close();
 });
-
-// ====================================================================
-//                          SHOW BLOG POPUP
-// ====================================================================
-
-// const blogModal = document.querySelector(".blog-modal");
-
-// const openBlogModal = document.getElementById(blogNumber);
-// const closeBlogModal = document.querySelector(".close-blog-modal");
-
-// openBlogModal.addEventListener("click", () => {
-//   blogModal.showModal();
-// });
-// closeBlogModal.addEventListener("click", () => {
-//   blogModal.close();
-// });
