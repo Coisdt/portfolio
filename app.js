@@ -47,7 +47,7 @@ navLinkAll.forEach((link) => {
     navLinks.classList.remove("show-nav");
 
     if (targetSection) {
-      const targetPosition = targetSection.offsetTop + fixedLinksHeight;
+      const targetPosition = targetSection.offsetTop - fixedLinksHeight;
       // console.log(targetSection);
       console.log(targetPosition);
       window.scrollTo({
