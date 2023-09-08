@@ -299,34 +299,33 @@ p {
   display: none;
 }
 
+
+
 @media screen and (min-width: 768px) {
   .hero {
     display: flex;
     padding: 2rem;
-    /* margin: 2rem; */
-    justify-content: space-around;
     align-items: center;
-    /* padding-top: 96px; */
     border-bottom: 10px solid #854d27;
   }
-
+  
   .hero-container {
-    display: grid;
-    justify-content: start;
-    padding-top: 55px;
+    display: flex;
+    padding-top: 60px;
     max-width: var(--max-width);
+    margin: 0 auto;
     text-align: left;
+    justify-content: center;
   }
 
   .introduction-container {
     display: grid;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 10px;
-  }
-
-  .introduction-container {
     padding-top: 10px;
     padding-bottom: 10px;
+    align-content: center;
+    /* height: 100%; */
   }
 
   .about-snippet {
@@ -399,8 +398,8 @@ p {
 */
 
 .about {
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
   /* margin: 0 auto; */
   padding: 1rem;
   padding-top: 30px;
@@ -424,12 +423,12 @@ p {
 /* =============== about */
 .about-card {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 200px, 1fr;
   border: 2px solid var(--special-color);
   gap: 1rem;
-  padding: 10px;
+  padding: 2rem;
   max-width: none;
-  /* flex: 1 0 222px; */
+  border-radius: 15px;
 }
 
 .about-card h1 {
@@ -438,31 +437,38 @@ p {
   text-align: center;
 }
 
+.about-me-read-more{
+  width: 128px;
+  margin: 0 auto;
+}
+
 /* =============== skills */
 .skills {
   display: grid;
-  grid-template-rows: 1fr 1.5fr 1fr;
   height: 100%;
   border: 2px solid var(--special-color);
-  gap: 0;
-  padding: 10px;
+  padding: 25px;
   grid-template-rows: auto auto auto;
   gap: 2rem;
+  border-radius: 15px;
 }
 
 .skills-center {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
+  display: flex;
+  /* grid-template-rows: 1fr 1fr; */
+  justify-content: space-around;
   gap: 0px;
+  width: 100%;
 }
 .skill-container {
   display: grid;
   height: 100%;
   justify-items: center;
+  padding-bottom: 1rem;
+  grid-template-columns: repeat(auto-fill, 250px), ;
 }
 
-.skills h1{
+.skills h1 {
   text-align: center;
 }
 
@@ -473,13 +479,18 @@ p {
 /* =============== tools */
 
 .tools {
-  gap: 5px;
-  height: fit-content;
+ display: grid;
+  height: 100%;
   border: 2px solid var(--special-color);
+  padding: 25px;
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  border-radius: 15px;
 }
 
-.tools h1{
+.tools h1 {
   text-align: center;
+  justify-content: center;
 }
 
 .tool-container {
@@ -487,6 +498,7 @@ p {
   width: 100%;
   gap: 0;
   justify-items: center;
+  padding-bottom: 1rem;
 }
 
 .tools-center {
@@ -550,94 +562,90 @@ p {
 
 @media screen and (min-width: 768px) {
   .about {
-    position: relative;
+    display: flex;
     padding: 2rem;
+  }
+  
+  .about-container {
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    max-width: var(--max-width);
+    margin: 0 auto;
   }
 
   .about-card {
-    /* position: relative; */
     border: 2px solid var(--special-color);
     display: grid;
     justify-content: center;
-    padding: 25px;
-    /* height: 500px; */
+    padding: 2rem;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 1fr 6fr;
     line-height: 25px;
-    /* flex: 1 0 400px; */
-    max-width: 500px;
+    flex: 10 0 400px;
+    text-align: ;
   }
 
   .skills {
-    display: grid;
-    grid-template-rows: 1fr 1fr 2fr;
-    justify-content: center;
-    gap: 2rem;
-    height: 500px;
-    border: 2px solid var(--special-color);
-    padding: 25px;
-    align-items: center;
-    line-height: 25px;
-    flex: 1 0 400px;
-  }
-
-  .tools {
     /* display: grid; */
-    /* flex: 1 0 400px; */
-    grid-template-rows: 1fr 6fr;
-    justify-content: center;
-    gap: 2rem;
-    /* height: 500px; */
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    /* justify-content: center; */
+    /* gap: 2rem; */
     border: 2px solid var(--special-color);
     padding: 25px;
-    align-items: center;
+    align-items: start;
+    /* align-self: center; */
+    /* line-height: 25px; */
+    flex: 1 0 400px;
+    height: auto;
   }
-
+  
+  .skill-container {
+    /* display: grid; */
+    /* justify-items: center; */
+    /* height: 100%; */
+  }
+  .skills-center {
+    display: flex;
+    justify-content: space-around;
+    gap: 0px;
+    width: 100%;
+  }
   .skills-title {
     display: grid;
     justify-content: center;
   }
-
-  .tools-title {
-    display: grid;
-    /* justify-content: center; */
-  }
-  .skill-container {
-    display: grid;
-    justify-items: center;
-    height: 5rem;
-  }
-
   .skill-container img:hover {
     height: 3.7rem;
   }
+  .tools {
+    display: grid;
+    gap: 2rem;
+    border: 2px solid var(--special-color);
+    padding: 25px;
+    align-items: start;
+    height: auto;
+    flex: 1 0 400px;
 
-  .about-card {
-    max-width: none;
-  }
-
-  .skills {
-    grid-template-rows: auto auto auto;
   }
   .tool-container {
     display: grid;
     justify-items: center;
-    /* height: 5rem; */
+    /* height: 100%; */
   }
   .tool-container img:hover {
     height: 3.7rem;
   }
-  .skills-center {
+  .tools-center {
     display: flex;
+    flex-direction: row;
+    /* grid-template-rows: 1fr 1fr 1fr; */
     justify-content: center;
     gap: 2rem;
   }
-  .tools-center {
+  .tools-title {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    gap: 2rem;
+    /* justify-content: center; */
   }
   /* ================================= about modal */
   .modal {
@@ -746,10 +754,7 @@ p {
   border: 2px solid var(--special-color);
   justify-self: center;
   flex: 1 0 200px;
-}
-
-.all-projects {
-  /* padding-top: 10rem; */
+  border-radius: 15px;
 }
 
 .project-card:hover {
