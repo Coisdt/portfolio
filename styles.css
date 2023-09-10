@@ -8,13 +8,15 @@
 }
 
 :root {
-  --text-color: #cac0b3;
+  --text-color: #ffffff;
   --background-color: rgb(2, 24, 43);
   --highlight-color: rgb(0, 151, 245);
   --special-color: rgb(133, 77, 39);
 
   /* other variables */
   --max-width: 1400px;
+  --small-screen-padding: 1rem;
+  --big-screen-padding: 2rem;
 }
 
 ul {
@@ -25,13 +27,13 @@ a {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--highlight-color);
   justify-self: center;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--highlight-color);
 }
 h3 {
@@ -40,7 +42,7 @@ h3 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 /* btns effect */
@@ -299,8 +301,6 @@ p {
   display: none;
 }
 
-
-
 @media screen and (min-width: 768px) {
   .hero {
     display: flex;
@@ -308,7 +308,7 @@ p {
     align-items: center;
     border-bottom: 10px solid #854d27;
   }
-  
+
   .hero-container {
     display: flex;
     padding-top: 60px;
@@ -423,10 +423,10 @@ p {
 /* =============== about */
 .about-card {
   display: grid;
-  grid-template-rows: 200px, 1fr;
+  /* grid-template-rows: 200px, 1fr; */
   border: 2px solid var(--special-color);
-  gap: 1rem;
-  padding: 2rem;
+  gap: 2rem;
+  padding: var(--small-screen-padding);
   max-width: none;
   border-radius: 15px;
 }
@@ -437,7 +437,7 @@ p {
   text-align: center;
 }
 
-.about-me-read-more{
+.about-me-read-more {
   width: 128px;
   margin: 0 auto;
 }
@@ -445,10 +445,10 @@ p {
 /* =============== skills */
 .skills {
   display: grid;
-  height: 100%;
+  /* height: 100%; */
   border: 2px solid var(--special-color);
-  padding: 25px;
-  grid-template-rows: auto auto auto;
+  padding: var(--small-screen-padding);
+  /* grid-template-rows: auto auto auto; */
   gap: 2rem;
   border-radius: 15px;
 }
@@ -456,34 +456,28 @@ p {
 .skills-center {
   display: flex;
   /* grid-template-rows: 1fr 1fr; */
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 0px;
-  width: 100%;
+  /* width: 100%; */
 }
 .skill-container {
   display: grid;
-  height: 100%;
+  /* height: 100%; */
   justify-items: center;
-  padding-bottom: 1rem;
-  grid-template-columns: repeat(auto-fill, 250px), ;
+  padding-bottom: var(--small-screen-padding);
+  /* grid-template-columns: repeat(auto-fill, 250px); */
 }
 
 .skills h1 {
   text-align: center;
 }
 
-.skill-container h3 {
-  font-size: 18px;
-}
-
 /* =============== tools */
 
 .tools {
- display: grid;
-  height: 100%;
+  display: grid;
   border: 2px solid var(--special-color);
-  padding: 25px;
-  grid-template-rows: auto auto auto;
+  padding: var(--small-screen-padding);
   gap: 2rem;
   border-radius: 15px;
 }
@@ -495,7 +489,6 @@ p {
 
 .tool-container {
   display: grid;
-  width: 100%;
   gap: 0;
   justify-items: center;
   padding-bottom: 1rem;
@@ -505,10 +498,6 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
-}
-
-.tools-center h3 {
-  font-size: 18px;
 }
 
 /* =============== modal */
@@ -565,7 +554,7 @@ p {
     display: flex;
     padding: 2rem;
   }
-  
+
   .about-container {
     flex-direction: row;
     width: 100%;
@@ -583,7 +572,6 @@ p {
     justify-items: center;
     line-height: 25px;
     flex: 10 0 400px;
-    text-align: ;
   }
 
   .skills {
@@ -599,7 +587,7 @@ p {
     flex: 1 0 400px;
     height: auto;
   }
-  
+
   .skill-container {
     /* display: grid; */
     /* justify-items: center; */
@@ -626,7 +614,6 @@ p {
     align-items: start;
     height: auto;
     flex: 1 0 400px;
-
   }
   .tool-container {
     display: grid;
@@ -713,7 +700,7 @@ p {
 
 .projects {
   display: grid;
-  padding: 2rem;
+  padding: var(--small-screen-padding);
   /* margin: 2rem; */
   gap: 2rem;
   justify-content: center;
@@ -727,7 +714,7 @@ p {
   gap: 2rem;
   max-width: var(--max-width);
   margin: 0 auto;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .project-center-title {
@@ -736,7 +723,7 @@ p {
   justify-content: center;
 }
 .project-center-description {
-  display: grid;
+  /* display: grid; */
   gap: 5rem;
   border-bottom: 5rem;
 }
@@ -745,15 +732,16 @@ p {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
 }
 
 .project-card {
   display: grid;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: var(--small-screen-padding);
   border: 2px solid var(--special-color);
   justify-self: center;
-  flex: 1 0 200px;
+  /* flex: 1 0 200px; */
   border-radius: 15px;
 }
 
@@ -762,6 +750,7 @@ p {
 }
 
 .project-card h2 {
+  text-align: center;
   justify-self: center;
   padding-bottom: 0;
   padding-top: 0;
@@ -778,17 +767,23 @@ p {
   display: flex;
   /* max-width: 470px; */
   overflow: hidden;
-  justify-self: center;
+  /* justify-self: center; */
   object-fit: cover;
-  width: 100%;
+  transform: translateX(0px);
+  /* width: 100%; */
 }
 .proj-img {
+  /* position: absolute; */
   border: 4px solid var(--special-color);
-  height: 20rem;
-  width: 100%;
+  width: 252px;
+  height: 161px;
+  /* max-width: 429px; */
   background-color: var(--background-color);
   object-fit: cover;
-  /* transform: translateX(-480px); */
+}
+
+.move-img {
+  /* transform: translateX(-252px); */
 }
 
 .swipe-screenshots {
@@ -797,7 +792,11 @@ p {
   align-items: center;
   max-width: 560px;
   margin: 0 auto;
-  gap: 5rem;
+  gap: 1rem;
+}
+
+.project-about-snippet h3 {
+  text-decoration: underline;
 }
 
 .all-projects {
@@ -812,7 +811,7 @@ p {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .projects {
     display: grid;
     grid-template-rows: auto 1fr;

@@ -259,3 +259,18 @@ openModal.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.close();
 });
+
+
+// ====================================================================
+//                          SWIPE SCREENSHOTS
+// ====================================================================
+
+
+const right = document.getElementById('arrow-right')
+const left = document.getElementById('arrow-left')
+const img = document.querySelector('.proj-img')
+const container = document.querySelector(".project-screenshot-container");
+
+right.addEventListener('click', ()=>{
+  container.style = "transform: translateX(-252px)";
+})
