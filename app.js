@@ -266,11 +266,13 @@ closeModal.addEventListener("click", () => {
 // ====================================================================
 
 
-const right = document.getElementById('arrow-right')
-const left = document.getElementById('arrow-left')
-const img = document.querySelector('.proj-img')
+const nextBtn = document.getElementById('arrow-right')
+const prevBtn = document.getElementById('arrow-left')
+const img = document.querySelectorAll('.proj-img')
 const container = document.querySelector(".project-screenshot-container");
 
-right.addEventListener('click', ()=>{
-  container.style = "transform: translateX(-252px)";
+
+
+  img.forEach(function(slide, index){
+    slide.style.left = `${index * 100}%`
 })
