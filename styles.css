@@ -13,10 +13,15 @@
   --highlight-color: rgb(0, 151, 245);
   --special-color: rgb(133, 77, 39);
 
+  /* faded background */
+  --faded-background: rgba(133, 77, 39, 0.2);
+
+
   /* other variables */
   --max-width: 1400px;
   --small-screen-padding: 1rem;
   --big-screen-padding: 2rem;
+  --big-screen-padding: 5rem 1rem;
 }
 
 ul {
@@ -61,6 +66,7 @@ p {
   color: white;
   cursor: pointer;
   justify-content: center;
+  height: fit-content;
 }
 
 .btn:hover {
@@ -68,6 +74,14 @@ p {
   background: #854d27;
   color: white;
 }
+
+
+  .section{
+    padding: 5rem 1rem;
+    border-bottom: 10px solid var(--special-color);
+  }
+
+
 
 /* 
 ====================================================================
@@ -317,7 +331,7 @@ p {
     /* padding: 2rem; */
     align-items: center;
     border-bottom: 10px solid #854d27;
-    padding-top: 6rem;
+    /* padding-top: 6rem; */
     justify-content: space-around;
   }
 
@@ -327,7 +341,7 @@ p {
     max-width: var(--max-width);
     margin: 0 auto;
     text-align: left;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
   }
 
@@ -335,7 +349,7 @@ p {
     display: grid;
     gap: 2rem;
     padding: 10px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     padding-bottom: 10px;
     align-content: center;
     /* height: 100%; */
@@ -392,11 +406,14 @@ p {
     align-items: center;
     justify-content: flex-start;
     display: grid;
+    /* margin-right: 10rem; */
     /* height: 2rem; */
   }
   .intro-profile-img {
     width: 20rem;
     object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid;
   }
 
   .profile-img-container-small {
@@ -415,24 +432,15 @@ p {
 */
 
 .about {
-  padding: 1rem 1rem;
+  /* display: flex; */
+  padding: 5rem 1rem;
   border-bottom: 10px solid var(--special-color);
 }
-.about,
-.about * {
-  background-color: var(--special-color);
+.about-img {
+  display: none;
 }
 
-.about-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
-  max-width: var(--max-width);
-  margin: 0 auto;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.card {
+.about-card {
   display: grid;
   justify-content: center;
   justify-items: center;
@@ -443,6 +451,10 @@ p {
   line-height: 1.5;
 }
 
+/* .card,
+.card * {
+  background-color: var(--special-color);
+} */
 .icon-center {
   display: flex;
   justify-content: space-around;
@@ -453,16 +465,14 @@ p {
 .fa-icon {
   font-size: 3rem;
 }
-.card h1 {
+/* .card h1 {
   display: grid;
   justify-content: center;
   height: fit-content;
   font-weight: bolder;
-}
+} */
 
-.icon-container p {
-  color: #ffffff;
-}
+
 
 .icon-container {
   display: grid;
@@ -472,11 +482,40 @@ p {
   transform: scale(1.1);
 }
 
-.about-me-read-more {
-  margin-top: 2rem;
+/* .about-me-read-more {
   background-color: var(--highlight-color);
-}
+} */
 
+@media screen and (min-width: 786px) {
+  .about {
+    padding: var(--big-screen-padding);
+  }
+
+  .about-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .about-card {
+    padding: 2rem 3rem;
+  }
+
+  .about-img{
+    display: grid;
+    align-items: center;
+  }
+  .about-img img {
+    width: 20rem;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid;
+  }
+}
 /* ================================= about modal */
 .modal {
   display: none;
@@ -532,7 +571,45 @@ p {
   justify-self: right;
   border: none;
 }
-/* } */
+.about-img {
+  /* height: 500px; */
+}
+
+/* 
+====================================================================
+                           SKILLS SECTION
+====================================================================
+*/
+.skills{
+/* display: grid; */
+}
+.skills-center{
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  max-width: var(--max-width);
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.card{
+  gap: 2rem;
+  padding: 1rem;
+  display: grid;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+}
+
+.card, .card >{
+  background-color: var(--faded-background);
+
+}
+
+@media screen and (min-width: 786px) {
+  .card{
+    padding: 2rem;
+  }
+}
 
 /* 
 ====================================================================
@@ -542,7 +619,7 @@ p {
 
 .projects {
   display: grid;
-  padding: 1rem;
+  /* padding: 1rem; */
   gap: 2rem;
   justify-content: center;
   align-items: center;
@@ -662,8 +739,9 @@ p {
     place-items: center;
     margin: 0 auto;
     height: fit-content;
-    padding: 1rem;
+    /* padding: 1rem; */
     border-bottom: 10px solid var(--special-color);
+    padding: var(--big-screen-padding);
   }
 
   /* .projects-center h1{

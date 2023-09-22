@@ -27,10 +27,11 @@
   <ul class="nav-links">
     <li><a href="#home" class="nav-link" >Home</a></li>
     <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#skills" class="nav-link">Skills</a></li>
     <li><a href="#projects" class="nav-link">Projects</a></li>
     <li><a href="#challenges" class="nav-link">Challenges</a></li>
-    <li><a href="#blog" class="nav-link">Blog</a></li>
-    <li><a href="#contact" class="nav-link btn" id="contact-btn" style="color: white; text-decoration: none;">Contact Me</a></li>
+    <!-- <li><a href="#blog" class="nav-link">Blog</a></li> -->
+    <li><a href="#contact" class="nav-link btn" id="contact-btn">Contact Me</a></li>
   </ul>
 
   </div>
@@ -90,14 +91,18 @@
 <!-- =====================about section -->
 <section class="about section" id="about">
   <div class="about-container ">
-    <div class="about-card card">
+    <div class="about-img">
+      <img src="./images/Chamuné & Francois Wedding_0225.jpg" alt="">
+    </div>
+    
+    <div class="about-card">
       <h1>About Me</h1>
       <p>My name is Francois du Toit, the Tall Guy Coder, a new and enthusiastic developer who is passionate about creating innovative solutions to complex problems. With a strong foundation in web development and a hunger to learn more, I am always seeking new challenges to expand my skill set. My attention to detail and dedication to writing clean, efficient code makes me a valuable asset to any team. I am excited to bring my unique perspective and creativity to the world of web development.</p>
       <button class="about-me-read-more btn">Read More</button>
     </div>
-    <!-- ===================== about popup -->
+    <!-- about modal -->
 
-  <dialog class="modal">
+    <dialog class="modal">
       <button class="close-popup"><i class=" fa-solid fa-x"></i></button>
       <div class="modal-container">
         <img class="float-img" src="./images/profile2new.png" alt="progr">
@@ -114,11 +119,24 @@ Ever since I can remember, I've been infront of a computer, obsessing over figur
 <br> <br>
 This sparked the need to build a better life for my family. The decision to transition from teaching to web development was driven by my desire to have a higher seeling in my professional life. My goal was to upskill myself as much as possible and work my way up the roles of a company. The rest, as they say, is history… <br>
 
-      </div>
-    </dialog>
+</div>
+</dialog>
+<!-- end of modal -->
 
-     <!-- skills -->
-    <div class="skills card">
+</div>
+</section>
+
+
+<!--
+====================================================================
+                           SKILLS SECTION
+====================================================================
+-->
+<section class="skills section" id="skills">
+  <div class="skills-center">
+
+    <!-- skills -->
+    <div class="skills-card card">
       <h1>Skills</h1>
       <p>I am a creative problem solver who's detail orientated. I've used the following tech stack to build attractive responsive frontends for websites:</p>
       <div class="icon-center">
@@ -136,32 +154,33 @@ This sparked the need to build a better life for my family. The decision to tran
         </div>
       </div>
     </div>
-  <!-- tools -->
-  <div class="tools card">
-   <h1>Tools</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni laborum, natus fuga reprehenderit praesentium labore accusantium unde harum dolor suscipit eligendi eveniet nostrum, eaque architecto!</p>
-    <div class="icon-center">
-      <div class="icon-container">
-        <img src="./images/icons8-visual-studio.svg" alt="vscode">
-        <p>VS Code</p>
-      </div>
-      <div class="icon-container">
-        <img src="./images/icons8-git.svg" alt="git">
-        <p>Git</p>
-      </div>
-      <div class="icon-container">
-        <img src="./images/icons8-canva.svg" alt="canva">
-        <p>Canva</p>
-      </div>
-      <div class="icon-container">
-        <i class="fa-icon fa-solid fa-font-awesome"></i>
-        <p>Font Awesome</p>
+    <!-- tools -->
+    <div class="tools-card card">
+      <h1>Tools</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni laborum, natus fuga reprehenderit praesentium labore accusantium unde harum dolor suscipit eligendi eveniet nostrum, eaque architecto!</p>
+      <div class="icon-center">
+        <div class="icon-container">
+          <img src="./images/icons8-visual-studio.svg" alt="vscode">
+          <p>VS Code</p>
+        </div>
+        <div class="icon-container">
+          <img src="./images/icons8-git.svg" alt="git">
+          <p>Git</p>
+        </div>
+        <div class="icon-container">
+          <img src="./images/icons8-canva.svg" alt="canva">
+          <p>Canva</p>
+        </div>
+        <div class="icon-container">
+          <i class="fa-icon fa-solid fa-font-awesome"></i>
+          <p>Font Awesome</p>
+        </div>
       </div>
     </div>
+    
   </div>
-</div>
-</div> 
-</section>
+  </section>
+
 
 
 <!--
@@ -209,7 +228,7 @@ This sparked the need to build a better life for my family. The decision to tran
       </div>
       <!-- END OF PROJECT -->
       <!-- START OF SECOND PROJECT -->
-      <!-- <div class="project-card">
+      <div class="project-card">
         <h2>Project name</h2>
         <div class="project-screenshot"><img class="proj-img" src="./images/random.png" alt="proj-screenshot"></div>
                 <div class="swipe-screenshots">
@@ -225,10 +244,10 @@ This sparked the need to build a better life for my family. The decision to tran
             <a href="./fakeProject.html"><button class="project-view-live btn">View Live</button></a>
           <button class="project-git-code btn">Github Code</button>
         </div>
-      </div> -->
+      </div>
       <!-- end -->
       <!-- START OF THIRD PROJECT -->
-      <!-- <div class="project-card">
+      <div class="project-card">
         <h2>Project name</h2>
         <div class="project-screenshot"><img class="proj-img" src="./images/random.png" alt="proj-screenshot"></div>
         <div class="swipe-screenshots">
@@ -244,7 +263,7 @@ This sparked the need to build a better life for my family. The decision to tran
           <a href="./fakeProject.html"><button class="project-view-live btn">View Live</button></a>
           <button class="project-git-code btn">Github Code</button>
         </div>
-      </div> -->
+      </div>
       <!-- end -->
     </div>
   </div>
@@ -337,7 +356,7 @@ This sparked the need to build a better life for my family. The decision to tran
 ====================================================================
  -->
 <!-- make a featured block thats bigger than the rest, then previous blogs under and smaller -->
-<section class="blog section" id="blog">
+<!-- <section class="blog section" id="blog">
   <div class="blogs-center">
     <div>
       <h1 class="blogs-center-title">My blog</h1>
@@ -345,28 +364,28 @@ This sparked the need to build a better life for my family. The decision to tran
     </div>
 
     <div class="blog-container">
-  <!-- blog cards -->
+  blog cards
     </div>
-    <!-- read all blogs btn -->
+    read all blogs btn
     <div class="all-blogs-div">
       <a href="./blogs.html"><i class="read-all-blogs btn">Read all blogs</i></a>
     </div>
 
-    <!-- slide btn -->
+    slide btn
     <article class="slide-btns">
     <div class="slide-btn-left">left</div>
     <div class="slide-btn-right">right</div>
     </article>
-    <!-- popup -->
+    popup
     <dialog class="blog-modal">
        
       <div class="blog-modal-container">
-        <!-- full blog view --> 
+        full blog view 
         <button class="close-blog-modal"><i class=" fa-solid fa-x"></i></button>
       </div>
       </dialog>
   </div>
-  </section>
+  </section> -->
   
 
 <!--

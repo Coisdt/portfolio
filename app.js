@@ -47,7 +47,7 @@ navLinkAll.forEach((link) => {
     navLinks.classList.remove("show-nav");
 
     if (targetSection) {
-      const targetPosition = targetSection.offsetTop - fixedLinksHeight;
+      const targetPosition = targetSection.offsetTop + fixedLinksHeight;
       // console.log(targetSection);
       console.log(targetPosition);
       window.scrollTo({
@@ -260,19 +260,15 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-
 // ====================================================================
 //                          SWIPE SCREENSHOTS
 // ====================================================================
 
-
-const nextBtn = document.getElementById('arrow-right')
-const prevBtn = document.getElementById('arrow-left')
-const img = document.querySelectorAll('.proj-img')
+const nextBtn = document.getElementById("arrow-right");
+const prevBtn = document.getElementById("arrow-left");
+const img = document.querySelectorAll(".proj-img");
 const container = document.querySelector(".project-screenshot-container");
 
-
-
-  img.forEach(function(slide, index){
-    slide.style.left = `${index * 100}%`
-})
+img.forEach(function (slide, index) {
+  slide.style.left = `${index * 100}%`;
+});
