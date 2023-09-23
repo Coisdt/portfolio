@@ -55,35 +55,44 @@ navLinkAll.forEach((link) => {
         behavior: "smooth",
       });
     }
+    if (window.innerWidth < 786) {
+      const targetPosition = targetSection.offsetTop;
+      // console.log(targetSection);
+      console.log(targetPosition);
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
   });
 });
 
 // =============underline link when scrolling -- start
 // still does not work
-function onScroll() {
-  const allSections = document.querySelectorAll(".section");
-  window.onscroll = () => {
-    allSections.forEach((section) => {
-      // console.log(section);
-      const top = window.scrollY;
-      const offset = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = nav.querySelector(".nav-link");
-      // console.log(id);
+// function onScroll() {
+//   const allSections = document.querySelectorAll(".section");
+//   window.onscroll = () => {
+//     allSections.forEach((section) => {
+//       // console.log(section);
+//       const top = window.scrollY;
+//       const offset = section.offsetTop;
+//       const height = section.offsetHeight;
+//       const id = nav.querySelector(".nav-link");
+//       // console.log(id);
 
-      if (top >= offset && top < offset + height) {
-        navLinks.forEach((link) => {
-          link.classList.remove("underline-when-there");
-        });
+//       if (top >= offset && top < offset + height) {
+//         navLinks.forEach((link) => {
+//           link.classList.remove("underline-when-there");
+//         });
 
-        const targetLink = link.querySelector(id);
-        if (targetLink) {
-          targetLink.classList.add("underline-when-there");
-        }
-      }
-    });
-  };
-}
+//         const targetLink = link.querySelector(id);
+//         if (targetLink) {
+//           targetLink.classList.add("underline-when-there");
+//         }
+//       }
+//     });
+//   };
+// }
 
 // onScroll()
 
@@ -198,52 +207,52 @@ const blogs = [
 // ====================================================================
 //                             SHOW BLOGS DYNAMICALLY
 // ====================================================================
-const blogCard = document.querySelector(".blog-container");
+// const blogCard = document.querySelector(".blog-container");
 
 // ================================fetch blog post info from data
-const fetchBlog = (blogs) => {
-  blogs.forEach((blog) => {
-    const { blogNumber, id, blogDate, blogTitle, blogSnippet, img, blogPost } =
-      blog;
-    const article = document.createElement("article");
-    article.classList.add("blog-card");
-    article.innerHTML = `<h4 class="featured"><em>${id}</em></h4>
-    <h2 class="blog-number">Blog #${blogNumber}</h2>
-    <img class="blog-img" src="${img}" alt="blog img">
-    <h3 class="blog-date">${blogDate}</h2>
-    <h3 class="blog-title">${blogTitle}</h3>
-    <p class="blog-snippet">${blogSnippet}</p>
-    <button class="read-more btn" id=${blogNumber}>Read</button>`;
-    blogCard.appendChild(article);
-    // const fullArticle = document.createElement("article");
+// const fetchBlog = (blogs) => {
+//   blogs.forEach((blog) => {
+//     const { blogNumber, id, blogDate, blogTitle, blogSnippet, img, blogPost } =
+//       blog;
+//     const article = document.createElement("article");
+//     article.classList.add("blog-card");
+//     article.innerHTML = `<h4 class="featured"><em>${id}</em></h4>
+//     <h2 class="blog-number">Blog #${blogNumber}</h2>
+//     <img class="blog-img" src="${img}" alt="blog img">
+//     <h3 class="blog-date">${blogDate}</h2>
+//     <h3 class="blog-title">${blogTitle}</h3>
+//     <p class="blog-snippet">${blogSnippet}</p>
+//     <button class="read-more btn" id=${blogNumber}>Read</button>`;
+//     blogCard.appendChild(article);
+// const fullArticle = document.createElement("article");
 
-    // ============================= blog modal open for each blog post
+// ============================= blog modal open for each blog post
 
-    const blogModal = document.querySelector(".blog-modal");
-    const openBlogModal = document.getElementById(blogNumber);
-    const closeBlogModal = blogModal.querySelector(".close-blog-modal");
+//     const blogModal = document.querySelector(".blog-modal");
+//     const openBlogModal = document.getElementById(blogNumber);
+//     const closeBlogModal = blogModal.querySelector(".close-blog-modal");
 
-    openBlogModal.addEventListener("click", () => {
-      blogModal.showModal();
-      blogModal.innerHTML = `
-      <button class="close-blog-modal-btn"><i class="close-blog-modal fa-solid fa-x"></i></button><h4 class="modal-featured"><em>${id}</em></h4>
-      <h2 class="modal-blog-number">Blog #${blogNumber}</h2>
-      <img class="modal-blog-img" src="${img}" alt="blog img">
-      <h3 class="modal-blog-date">${blogDate}</h2>
-      <h3 class="modal-blog-title">${blogTitle}</h3>
-      <p class='modal-blog-post'>${blogPost}<p>
-      `;
-    });
-    document.addEventListener("click", (event) => {
-      if (event.target.matches(".close-blog-modal")) {
-        console.log("Close button clicked");
-        blogModal.close();
-      }
-    });
-  });
-};
+//     openBlogModal.addEventListener("click", () => {
+//       blogModal.showModal();
+//       blogModal.innerHTML = `
+//       <button class="close-blog-modal-btn"><i class="close-blog-modal fa-solid fa-x"></i></button><h4 class="modal-featured"><em>${id}</em></h4>
+//       <h2 class="modal-blog-number">Blog #${blogNumber}</h2>
+//       <img class="modal-blog-img" src="${img}" alt="blog img">
+//       <h3 class="modal-blog-date">${blogDate}</h2>
+//       <h3 class="modal-blog-title">${blogTitle}</h3>
+//       <p class='modal-blog-post'>${blogPost}<p>
+//       `;
+//     });
+//     document.addEventListener("click", (event) => {
+//       if (event.target.matches(".close-blog-modal")) {
+//         console.log("Close button clicked");
+//         blogModal.close();
+//       }
+//     });
+//   });
+// };
 
-fetchBlog(blogs);
+// fetchBlog(blogs);
 
 // ====================================================================
 //                          SHOW ABOUT POPUP

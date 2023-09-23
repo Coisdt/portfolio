@@ -16,12 +16,11 @@
   /* faded background */
   --faded-background: rgba(133, 77, 39, 0.2);
 
-
   /* other variables */
   --max-width: 1400px;
   --small-screen-padding: 1rem;
   --big-screen-padding: 2rem;
-  --big-screen-padding: 5rem 1rem;
+  --big-screen-padding: 5rem 2rem;
 }
 
 ul {
@@ -75,13 +74,16 @@ p {
   color: white;
 }
 
+.section {
+  padding: 5rem 1rem;
+  border-bottom: 10px solid var(--special-color);
+}
 
-  .section{
-    padding: 5rem 1rem;
-    border-bottom: 10px solid var(--special-color);
+@media screen and (max-width: 786px) {
+  .section {
+    padding: 2rem 2rem;
   }
-
-
+}
 
 /* 
 ====================================================================
@@ -90,9 +92,6 @@ p {
 */
 
 .navigation-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 100;
   box-shadow: 5px 5px 5px 5px rgb(1, 12, 22);
@@ -168,6 +167,9 @@ p {
   .navigation-bar {
     /* border-top: 10px solid var(--special-color); */
     height: 6rem;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   .nav-center {
@@ -177,6 +179,7 @@ p {
     max-width: var(--max-width);
     /* padding: 0 2rem; */
     height: 100%;
+    padding: 0rem 2rem;
   }
 
   .nav-header {
@@ -184,6 +187,7 @@ p {
     max-width: var(--max-width);
     align-items: center;
     /* margin: 0 auto; */
+    padding: 1rem 0;
   }
 
   .nav-links {
@@ -239,22 +243,44 @@ p {
   border-radius: 50%;
   right: 90px;
   bottom: 150px;
+  background-color: transparent;
 }
 
 .up-btn {
   border-radius: 50%;
   padding: 20px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    margin-bottom: 0rem;
+  }
+  50% {
+    margin-bottom: 1rem;
+    background-color: var(--special-color);
+  }
+  100% {
+    margin-bottom: 0rem;
+  }
 }
 
 .show {
   display: grid;
 }
 
-@media screen and (max-width: 560px) {
+
   .scroll-up-btn {
     right: 10px;
     bottom: 10px;
+  
+}
+
+@media (min-width: 789px) {
+  .scroll-up-btn{
+    display: none;
   }
+  
 }
 /* 
 ====================================================================
@@ -264,7 +290,7 @@ p {
 
 .hero {
   height: fit-content;
-  padding: 7rem 1rem 5rem 1rem;
+  /* padding: 4rem 1rem 4rem 1rem; */
   border-bottom: 10px solid var(--special-color);
 }
 
@@ -292,7 +318,7 @@ p {
 
 .intro-profile-img-small {
   border-radius: 50%;
-  border: 2px solid var(--special-color);
+  border: 2px solid white;
   background-color: var(--special-color);
   width: 60%;
   justify-self: center;
@@ -327,21 +353,19 @@ p {
 
 @media screen and (min-width: 768px) {
   .hero {
-    /* display: flex; */
-    /* padding: 2rem; */
+    display: flex;
     align-items: center;
     border-bottom: 10px solid #854d27;
-    /* padding-top: 6rem; */
     justify-content: space-around;
   }
 
   .hero-container {
     display: flex;
-    padding-top: 60px;
     max-width: var(--max-width);
     margin: 0 auto;
     text-align: left;
     justify-content: space-evenly;
+    padding: 5rem 2rem;
     width: 100%;
   }
 
@@ -433,7 +457,7 @@ p {
 
 .about {
   /* display: flex; */
-  padding: 5rem 1rem;
+  /* padding: 5rem 1rem; */
   border-bottom: 10px solid var(--special-color);
 }
 .about-img {
@@ -472,8 +496,6 @@ p {
   font-weight: bolder;
 } */
 
-
-
 .icon-container {
   display: grid;
   justify-items: center;
@@ -504,7 +526,7 @@ p {
     padding: 2rem 3rem;
   }
 
-  .about-img{
+  .about-img {
     display: grid;
     align-items: center;
   }
@@ -580,10 +602,10 @@ p {
                            SKILLS SECTION
 ====================================================================
 */
-.skills{
-/* display: grid; */
+.skills {
+  /* display: grid; */
 }
-.skills-center{
+.skills-center {
   display: grid;
   gap: 5rem;
   grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
@@ -592,21 +614,16 @@ p {
   justify-content: center;
 }
 
-.card{
+.card {
   gap: 2rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: grid;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
 }
 
-.card, .card >{
-  background-color: var(--faded-background);
-
-}
-
 @media screen and (min-width: 786px) {
-  .card{
+  .card {
     padding: 2rem;
   }
 }
@@ -618,7 +635,7 @@ p {
 */
 
 .projects {
-  display: grid;
+  /* display: grid; */
   /* padding: 1rem; */
   gap: 2rem;
   justify-content: center;
@@ -680,7 +697,7 @@ p {
   position: relative;
   display: grid;
   object-fit: cover;
-  width: 200px;
+  /* width: 200px; */
   height: 200px;
   max-width: 80rem;
   margin: 0 auto;
