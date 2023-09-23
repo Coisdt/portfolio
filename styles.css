@@ -269,18 +269,15 @@ p {
   display: grid;
 }
 
-
-  .scroll-up-btn {
-    right: 10px;
-    bottom: 10px;
-  
+.scroll-up-btn {
+  right: 10px;
+  bottom: 10px;
 }
 
-@media (min-width: 789px) {
-  .scroll-up-btn{
+@media (min-width: 786px) {
+  .scroll-up-btn {
     display: none;
   }
-  
 }
 /* 
 ====================================================================
@@ -351,7 +348,7 @@ p {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 786px) {
   .hero {
     display: flex;
     align-items: center;
@@ -449,9 +446,17 @@ p {
   }
 }
 
+@media (min-width: 786px) and (max-width: 966px) {
+  .hero {
+    padding: 2rem 2rem;
+  }
+  .hero-container {
+    padding: 2rem 2rem;
+  }
+}
 /* 
 ====================================================================
-                           ABOUT SECTION
+ABOUT SECTION
 ====================================================================
 */
 
