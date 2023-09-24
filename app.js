@@ -6,7 +6,7 @@ const toggleNavBtn = document.getElementById("toggle-nav-btn");
 const navLinks = document.querySelector(".nav-links");
 const navLinkAll = document.querySelectorAll(".nav-link");
 const fixedLinksHeight = navLinks.offsetTop - navLinks.offsetHeight;
-console.log(fixedLinksHeight);
+// console.log(fixedLinksHeight);
 
 toggleNavBtn.addEventListener("click", () => {
   navLinks.classList.toggle("show-nav");
@@ -273,11 +273,50 @@ closeModal.addEventListener("click", () => {
 //                          SWIPE SCREENSHOTS
 // ====================================================================
 
-const nextBtn = document.getElementById("arrow-right");
-const prevBtn = document.getElementById("arrow-left");
-const img = document.querySelectorAll(".proj-img");
-const container = document.querySelector(".project-screenshot-container");
+const prevButton = document.getElementById("prev-btn");
+const nextButton = document.getElementById("next-btn");
+const carousel = document.querySelector(".carousel");
+const images = document.querySelectorAll(".carousel img");
 
-img.forEach(function (slide, index) {
-  slide.style.left = `${index * 100}%`;
+let currentIndex = 0;
+
+// nextButton.addEventListener("click", () => {
+//   currentIndex = (currentIndex + 1) % images.length;
+//   updateCarousel();
+// });
+
+// prevButton.addEventListener("click", () => {
+//   currentIndex = (currentIndex - 1 + images.length) % images.length;
+//   updateCarousel();
+// });
+
+// MY FIRST ATTEMPT
+nextButton.addEventListener("click", () => {
+  currentIndex++;
+  updateCarousel();
+  if (currentIndex >= images.length - 1) {
+    currentIndex = 0 - 1;
+  }
+  console.log(currentIndex);
+  return;
 });
+
+prevButton.addEventListener("click", () => {
+  currentIndex--;
+  // console.log(currentIndex);
+  // console.log(images.length - 1);
+  if (currentIndex === -1) {
+    currentIndex = images.length - 1;
+  }
+  updateCarousel();
+  console.log(currentIndex);
+});
+
+console.log(currentIndex);
+
+function updateCarousel() {
+  const offset = -currentIndex * 100;
+  images.forEach((images) => {
+    images.style.transform = `translateX(${offset}%)`;
+  });
+}
