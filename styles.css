@@ -645,10 +645,8 @@ ABOUT SECTION
 */
 
 .projects {
-  /* display: grid; */
-  /* padding: 1rem; */
+  display: grid;
   gap: 2rem;
-  /* justify-content: center; */
   align-items: center;
   border-bottom: 10px solid var(--special-color);
 }
@@ -673,9 +671,7 @@ ABOUT SECTION
 .projects-container {
   display: grid;
   gap: 2rem;
-  /* flex-wrap: wrap; */
   grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
-  /* margin: 0 auto; */
 }
 
 .project-card {
@@ -685,6 +681,7 @@ ABOUT SECTION
   border: 2px solid var(--special-color);
   justify-self: center;
   border-radius: 15px;
+  padding: 2rem;
 }
 
 .project-card:hover {
@@ -712,16 +709,13 @@ ABOUT SECTION
 .carousel {
     display: flex;
     overflow: hidden;
-    /* width: 300px;  */
-    /* Adjust the width as needed */
   }
   
   .carousel img {
     width: 100%;
     height: auto;
-    /* transform: translateX(-100%); */
     
-}
+} 
 
 .carousel-btn-container {
   display: flex;
@@ -746,53 +740,48 @@ ABOUT SECTION
   height: fit-content;
 }
 
-/* @media screen and (max-width: 1290px) {
-  .project-screenshot-container {
-    max-width: 590px;
-  }
-} */
 
 @media screen and (min-width: 786px) {
-  .projects {
-    /* display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(288px, 1fr)); */
+
+
+  .projects-container {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.project-card {
+  padding: 2rem;
+}
+  
+.all-projects {
+  display: grid;
+    height: fit-content;
+    justify-content: center;
+  }
+  
+  /* .projects {
+    display: grid;
     place-items: center;
     margin: 0 auto;
-    /* height: fit-content; */
-    /* padding: 1rem; */
     border-bottom: 10px solid var(--special-color);
     padding: var(--big-screen-padding);
   }
-
-  /* .projects-center h1{
-    font-size: medium;
-  }
-  .projects-center p{
-    font-size: medium;
-  } */
 
   .project-card h2 {
     text-align: center;
   }
   .projects-container {
-    /* display: grid; */
-    /* height: 100%; */
-    /* width: 100%; */
-    /* grid-template-columns: repeat(auto-fit, minmax(288px, 1fr)); */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   }
 
   .project-center {
-    /* display: grid; */
-    /* gap: 10rem; */
-    /* height: 100%; */
-    /* width: 100%; */
+    display: grid;
   }
 
   .project-card {
-    padding: 2rem;
     display: grid;
+    padding: 2rem;
     height: 100%;
-    /* width: 100%; */
     row-gap: 2rem;
     gap: 25px;
   }
@@ -805,9 +794,7 @@ ABOUT SECTION
   .proj-img {
   }
 
-  .all-projects-btn {
-    height: fit-content;
-  }
+  .
 
   .swipe-screenshots {
     display: flex;
@@ -815,7 +802,7 @@ ABOUT SECTION
   }
   .project-git-code {
     height: fit-content;
-  }
+  } */
 }
 
 /* 
