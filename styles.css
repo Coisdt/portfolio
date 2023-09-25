@@ -288,7 +288,7 @@ p {
 .hero {
   height: fit-content;
   /* padding: 4rem 1rem 4rem 1rem; */
-  padding: 8rem 2rem 5rem 2rem;
+  padding: 4rem 2rem 5rem 2rem;
   border-bottom: 10px solid var(--special-color);
 }
 
@@ -507,7 +507,7 @@ ABOUT SECTION
   justify-items: center;
 }
 
-.icon-container p{
+.icon-container p {
   justify-items: center;
 }
 .icon-container img:hover {
@@ -549,17 +549,20 @@ ABOUT SECTION
   }
 }
 /* ================================= about modal */
-.modal {
-  display: none;
+.modal[open] {
+  display: grid;
   padding: 50px;
   border: 4px solid var(--special-color);
-  position: fixed;
-  top: 80px;
+  /* position: fixed; */
+  top: 50px;
   right: 150px;
   bottom: 150px;
   left: 150px;
   z-index: 10040;
   height: fit-content;
+}
+.modal {
+  display: none;
 }
 
 .modal h1 {
@@ -590,10 +593,6 @@ ABOUT SECTION
   margin-right: 400px;
 }
 
-.modal[open] {
-  display: grid;
-}
-
 .modal::backdrop {
   background-color: rgb(2, 24, 43, 0.75);
 }
@@ -607,6 +606,46 @@ ABOUT SECTION
   /* height: 500px; */
 }
 
+@media (max-width: 1586px) {
+  .modal {
+    padding: 2rem;
+  }
+
+  .modal[open] {
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+  }
+
+  .float-img {
+    height: 250px;
+  }
+
+  .modal-container p {
+    margin-right: 250px;
+  }
+}
+
+@media (max-width: 999px) {
+  .float-img {
+    display: none;
+  }
+  .modal[open] {
+    padding: 1.5rem;
+  }
+
+  .modal-container p {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 786px) {
+  .modal[open] {
+    padding: 1rem;
+  }
+}
+
 /* 
 ====================================================================
                            SKILLS SECTION
@@ -615,6 +654,11 @@ ABOUT SECTION
 .skills {
   /* display: grid; */
 }
+
+.card:hover {
+  box-shadow: 20px 20px 60px -15px var(--special-color);
+}
+
 .skills-center {
   display: grid;
   gap: 5rem;
@@ -682,10 +726,12 @@ ABOUT SECTION
   justify-self: center;
   border-radius: 15px;
   padding: 2rem;
+  box-shadow: 20px 20px 60px -15px var(--special-color);
 }
 
 .project-card:hover {
   border: 2px solid var(--highlight-color);
+  transition: 0.5s;
 }
 
 .project-card h2 {
@@ -701,29 +747,27 @@ ABOUT SECTION
   gap: 10px;
 }
 
- 
 .carousel-container {
-    position: relative;
+  position: relative;
 }
 
 .carousel {
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .carousel img {
-    width: 100%;
-    height: auto;
-    
-} 
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
 
 .carousel-btn-container {
   display: flex;
   justify-content: space-evenly;
 }
 
-.carousel-btn{
-  background:transparent;
+.carousel-btn {
+  background: transparent;
   border: none;
   border-bottom: 1px solid white;
   padding: 0.5rem;
@@ -740,24 +784,21 @@ ABOUT SECTION
   height: fit-content;
 }
 
-
 @media screen and (min-width: 786px) {
-
-
   .projects-container {
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-}
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 
-.project-card {
-  padding: 2rem;
-}
-  
-.all-projects {
-  display: grid;
+  .project-card {
+    padding: 2rem;
+  }
+
+  .all-projects {
+    display: grid;
     height: fit-content;
     justify-content: center;
   }
-  
+
   /* .projects {
     display: grid;
     place-items: center;
@@ -812,22 +853,24 @@ ABOUT SECTION
 */
 
 .coding-challenges {
-  height: fit-content;
   display: flex;
+  height: fit-content;
   padding: 2rem;
-  /* margin: 2rem; */
-  gap: 3rem;
   justify-content: center;
   align-items: center;
-  display: grid;
   border-bottom: 10px solid var(--special-color);
 }
 
+.challenges-center {
+  display: grid;
+  gap: 2rem;
+}
 .challenges-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   max-width: var(--max-width);
+  height: 350px;
 }
 
 .challenges-center {
@@ -839,67 +882,83 @@ ABOUT SECTION
   justify-content: center;
 }
 .challenge-card {
+  position: relative;
   display: grid;
   gap: 20px;
-  padding: 2rem;
-  border: 2px solid var(--special-color);
   justify-self: center;
 }
 
-.challenge-card:hover {
-  border: 2px solid var(--highlight-color);
-}
-
+/* === CARD TITLE === */
 .challenge-card h2 {
+  display: none;
+  position: absolute;
+  background-color: transparent;
   justify-self: center;
   padding-bottom: 0;
   padding-top: 0;
 }
 
-.challenge-about-snippet h3 {
-  text-decoration: underline;
+.challenge-card:hover h2 {
+  display: grid;
+  transition: 500ms;
+  animation: slideDown 0.5s forwards;
 }
+
+@keyframes slideDown {
+  0% {
+    top: -5%;
+    opacity: 0.2;
+  }
+  100% {
+    top: 5%;
+    opacity: 1;
+  }
+}
+
+/* === BORDER === */
+.challenge-card:hover {
+  padding: 5rem 2rem;
+  transition: 0.5s;
+  border: 2px solid var(--special-color);
+}
+
+/* === BUTTONS === */
 .challenge-btns {
-  display: flex;
-  justify-content: center;
+  display: none;
+  position: absolute;
+  justify-self: center;
   gap: 10px;
   height: fit-content;
 }
 
-.challenge-screenshot {
-  position: relative;
+.challenge-view-live a {
+  background-color: transparent;
+}
+
+.challenge-card:hover .challenge-btns {
+  display: flex;
+  bottom: 5px;
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -5%;
+    opacity: 0.2;
+  }
+  100% {
+    bottom: 5%;
+    opacity: 1;
+  }
 }
 
 .challenge-screenshot img {
-  display: block;
+  display: grid;
   border: 2px solid;
   height: auto;
   width: 100%;
+  /* width: 50rem; */
   background-color: var(--background-color);
-}
-
-.swipe-screenshots-chal {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  width: auto;
-  background: transparent;
-  height: 2rem;
-}
-
-.swipe-screenshots-chal i {
-  font-size: 2rem;
-  background: transparent;
-  color: var(--highlight-color);
-}
-.swipe-screenshots-chal i:hover {
-  zoom: 150%;
 }
 
 @media screen and (max-width: 786px) {
@@ -934,6 +993,34 @@ ABOUT SECTION
   .challenges-center-title h1 {
     font-size: 45px;
     justify-content: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .challenge-card:hover .challenge-btns {
+    display: grid;
+  }
+
+  .challenge-card:hover h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .challenge-screenshot {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 786px) {
+  .challenges-container {
+    height: fit-content;
+  }
+
+  .challenge-card:hover .challenge-btns {
+    display: flex;
+  }
+
+  .challenge-screenshot {
+    padding-top: 0rem;
   }
 }
 
@@ -1099,7 +1186,7 @@ BLOG SECTION
 }
 
 .contact-info {
-  display: grid;
+  display: flex;
   gap: 3rem;
   justify-content: center;
   padding-bottom: 2rem;
@@ -1137,11 +1224,12 @@ BLOG SECTION
   justify-content: center;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 786px) {
   .contact-info {
-    display: grid;
+    display: flex;
     gap: 1rem;
     font-size: small;
+    align-content: center;
   }
 
   .contact-title h1 {
@@ -1194,6 +1282,7 @@ BLOG SECTION
 .footer-socials-container {
   display: grid;
   height: 100%;
+  margin-top: 1rem;
   justify-items: center;
 }
 
