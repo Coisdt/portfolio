@@ -2,15 +2,15 @@
 //                           TOGGLE SIDEBAR
 // ====================================================================
 
-const toggleNavBtn = document.getElementById("toggle-nav-btn");
-const navLinks = document.querySelector(".nav-links");
-const navLinkAll = document.querySelectorAll(".nav-link");
-const fixedLinksHeight = navLinks.offsetTop - navLinks.offsetHeight;
+const toggleNavBtn = document.getElementById('toggle-nav-btn')
+const navLinks = document.querySelector('.nav-links')
+const navLinkAll = document.querySelectorAll('.nav-link')
+const fixedLinksHeight = navLinks.offsetTop - navLinks.offsetHeight
 // console.log(fixedLinksHeight);
 
-toggleNavBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("show-nav");
-});
+toggleNavBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('show-nav')
+})
 
 // ====================================================================
 //                     ADD UNDERLINE FOR EACH LINK CLICK
@@ -18,54 +18,54 @@ toggleNavBtn.addEventListener("click", () => {
 
 function navClicked() {
   navLinkAll.forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener('click', () => {
       navLinkAll.forEach((otherLink) => {
-        otherLink.classList.remove("underline-when-there");
-      });
-      link.classList.add("underline-when-there");
-    });
-  });
+        otherLink.classList.remove('underline-when-there')
+      })
+      link.classList.add('underline-when-there')
+    })
+  })
 }
 
-navClicked();
+navClicked()
 
 // ====================================================================
 //                          SMOOTH SCROLL TO SECTIONS
 // ====================================================================
 
-const linkContainer = document.querySelector(".nav-links");
-const nav = document.querySelector(".navigation-bar");
-const navBar = document.querySelector(".navigation-bar");
+const linkContainer = document.querySelector('.nav-links')
+const nav = document.querySelector('.navigation-bar')
+const navBar = document.querySelector('.navigation-bar')
 
 navLinkAll.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href");
-    const targetSection = document.querySelector(targetId);
+  link.addEventListener('click', (e) => {
+    e.preventDefault()
+    const targetId = link.getAttribute('href')
+    const targetSection = document.querySelector(targetId)
     const fixedNavHeight =
-      document.querySelector(".navigation-bar").offsetHeight;
-    navLinks.classList.remove("show-nav");
+      document.querySelector('.navigation-bar').offsetHeight
+    navLinks.classList.remove('show-nav')
 
     if (targetSection) {
-      const targetPosition = targetSection.offsetTop + fixedLinksHeight;
+      const targetPosition = targetSection.offsetTop + fixedLinksHeight
       // console.log(targetSection);
-      console.log(targetPosition);
+      console.log(targetPosition)
       window.scrollTo({
         top: targetPosition,
-        behavior: "smooth",
-      });
+        behavior: 'smooth',
+      })
     }
     if (window.innerWidth < 786) {
-      const targetPosition = targetSection.offsetTop;
+      const targetPosition = targetSection.offsetTop
       // console.log(targetSection);
-      console.log(targetPosition);
+      console.log(targetPosition)
       window.scrollTo({
         top: targetPosition,
-        behavior: "smooth",
-      });
+        behavior: 'smooth',
+      })
     }
-  });
-});
+  })
+})
 
 // =============underline link when scrolling -- start
 // still does not work
@@ -99,66 +99,66 @@ navLinkAll.forEach((link) => {
 // ====================================================================
 //                           SCROLL TO TOP BTN
 // ====================================================================
-const scrollUpBtn = document.querySelector(".scroll-up-btn");
-const scrollHeight = window.pageYOffset;
-const topOfScreen = document.querySelector("#top");
+const scrollUpBtn = document.querySelector('.scroll-up-btn')
+const scrollHeight = window.pageYOffset
+const topOfScreen = document.querySelector('#top')
 
-scrollUpBtn.addEventListener("click", () => {
+scrollUpBtn.addEventListener('click', () => {
   topOfScreen.scrollIntoView({
-    behavior: "smooth",
-  });
-});
+    behavior: 'smooth',
+  })
+})
 
 // ====================================================================
 //                           SHOW SCROLL TO TOP BTN
 // ====================================================================
-window.addEventListener("scroll", () => {
-  const scrollHeight = window.pageYOffset;
+window.addEventListener('scroll', () => {
+  const scrollHeight = window.pageYOffset
   if (scrollHeight > 500) {
-    scrollUpBtn.classList.add("show");
+    scrollUpBtn.classList.add('show')
   } else {
-    scrollUpBtn.classList.remove("show");
+    scrollUpBtn.classList.remove('show')
   }
-});
+})
 
 // ====================================================================
 //                           COPYRIGHT DATE
 // ====================================================================
 
-const date = document.getElementById("date");
-date.innerHTML = new Date().getFullYear();
+const date = document.getElementById('date')
+date.innerHTML = new Date().getFullYear()
 
 // ====================================================================
 //                          EMAIL SETUP
 // ====================================================================
 
-const form = document.getElementById("submit"); // Assuming the form has the ID "submit"
+const form = document.getElementById('submit') // Assuming the form has the ID "submit"
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent form submission
+form.addEventListener('submit', function (event) {
+  event.preventDefault() // Prevent form submission
 
   // Get form data
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+  const name = document.getElementById('name').value
+  const email = document.getElementById('email').value
+  const message = document.getElementById('message').value
 
   // Create a mailto link
   var mailtoLink =
-    "mailto:cois25@live.com" +
-    "?subject=Website Message from: " +
+    'mailto:cois25@live.com' +
+    '?subject=Website Message from: ' +
     encodeURIComponent(name) +
-    "&body=" +
-    encodeURIComponent(message + "\n\nFrom: " + email);
+    '&body=' +
+    encodeURIComponent(message + '\n\nFrom: ' + email)
 
   // Open the default email client
-  window.location.href = mailtoLink;
+  window.location.href = mailtoLink
   // alert("Thank you for your message! I'll be in touch soon.")
-  const contactDiv = document.querySelector(".contact-container");
+  const contactDiv = document.querySelector('.contact-container')
   setTimeout(() => {
-    contactDiv.innerHTML = `<div class="sent-message"></div>`;
-    contactDiv.textContent = `Thank you so much for your message. I'll be in touch soon.`;
-  }, 2000);
-});
+    contactDiv.innerHTML = `<div class="sent-message"></div>`
+    contactDiv.textContent = `Thank you so much for your message. I'll be in touch soon.`
+  }, 2000)
+})
 
 // ====================================================================
 //                              BLOG DATA
@@ -167,42 +167,42 @@ form.addEventListener("submit", function (event) {
 const blogs = [
   {
     blogNumber: 4,
-    img: "./images/..",
-    id: "New Blog",
-    blogDate: "2 January 2023",
-    blogTitle: "How amazing is this!!!",
-    blogSnippet: "Guys I cannot believe this is working",
-    blogPost: "lorem100",
+    img: './images/..',
+    id: 'New Blog',
+    blogDate: '2 January 2023',
+    blogTitle: 'How amazing is this!!!',
+    blogSnippet: 'Guys I cannot believe this is working',
+    blogPost: 'lorem100',
   },
   {
     blogNumber: 3,
-    img: "./images/..",
-    id: "Previously",
-    blogDate: "6 February 2023",
-    blogTitle: "Cannot believe this!!!",
-    blogSnippet: "Wow im super excited that this works",
-    blogPost: "this one worked!",
+    img: './images/..',
+    id: 'Previously',
+    blogDate: '6 February 2023',
+    blogTitle: 'Cannot believe this!!!',
+    blogSnippet: 'Wow im super excited that this works',
+    blogPost: 'this one worked!',
   },
 
   {
     blogNumber: 2,
-    id: "Previously",
-    img: "./images/..",
-    blogDate: "6 February 2023",
-    blogTitle: "Cannot believe this!!!",
-    blogSnippet: "Wow im super excited that this works",
-    blogPost: "lorem100",
+    id: 'Previously',
+    img: './images/..',
+    blogDate: '6 February 2023',
+    blogTitle: 'Cannot believe this!!!',
+    blogSnippet: 'Wow im super excited that this works',
+    blogPost: 'lorem100',
   },
   {
     blogNumber: 1,
-    id: "Previously",
-    img: "./images/random.png",
-    blogDate: "1 February 2023",
-    blogTitle: "Cannot believe this!!!",
-    blogSnippet: "HEEEEEELLLLOOOOOOO world!!!!!",
-    blogPost: "lorem100",
+    id: 'Previously',
+    img: './images/random.png',
+    blogDate: '1 February 2023',
+    blogTitle: 'Cannot believe this!!!',
+    blogSnippet: 'HEEEEEELLLLOOOOOOO world!!!!!',
+    blogPost: 'lorem100',
   },
-];
+]
 
 // ====================================================================
 //                             SHOW BLOGS DYNAMICALLY
@@ -258,27 +258,27 @@ const blogs = [
 //                          SHOW ABOUT POPUP
 // ====================================================================
 
-const modal = document.querySelector(".modal");
-const openModal = document.querySelector(".about-me-read-more");
-const closeModal = document.querySelector(".close-popup");
+const modal = document.querySelector('.modal')
+const openModal = document.querySelector('.about-me-read-more')
+const closeModal = document.querySelector('.close-popup')
 
-openModal.addEventListener("click", () => {
-  modal.showModal();
-});
-closeModal.addEventListener("click", () => {
-  modal.close();
-});
+openModal.addEventListener('click', () => {
+  modal.showModal()
+})
+closeModal.addEventListener('click', () => {
+  modal.close()
+})
 
 // ====================================================================
 //                          SWIPE SCREENSHOTS
 // ====================================================================
 
-const prevButton = document.getElementById("prev-btn");
-const nextButton = document.getElementById("next-btn");
-const carousel = document.querySelector(".carousel");
-const images = document.querySelectorAll(".carousel img");
+const prevButton = document.getElementById('prev-btn')
+const nextButton = document.getElementById('next-btn')
+const carousel = document.querySelector('.carousel')
+const images = document.querySelectorAll('.carousel img')
 
-let currentIndex = 0;
+let currentIndex = 0
 
 // nextButton.addEventListener("click", () => {
 //   currentIndex = (currentIndex + 1) % images.length;
@@ -291,32 +291,54 @@ let currentIndex = 0;
 // });
 
 // MY FIRST ATTEMPT
-nextButton.addEventListener("click", () => {
-  currentIndex++;
-  updateCarousel();
+nextButton.addEventListener('click', () => {
+  currentIndex++
+  updateCarousel()
   if (currentIndex >= images.length - 1) {
-    currentIndex = 0 - 1;
+    currentIndex = 0 - 1
   }
-  console.log(currentIndex);
-  return;
-});
+  console.log(currentIndex)
+  return
+})
 
-prevButton.addEventListener("click", () => {
-  currentIndex--;
+prevButton.addEventListener('click', () => {
+  currentIndex--
   // console.log(currentIndex);
   // console.log(images.length - 1);
   if (currentIndex === -1) {
-    currentIndex = images.length - 1;
+    currentIndex = images.length - 1
   }
-  updateCarousel();
-  console.log(currentIndex);
-});
+  updateCarousel()
+  console.log(currentIndex)
+})
 
-console.log(currentIndex);
+console.log(currentIndex)
 
 function updateCarousel() {
-  const offset = -currentIndex * 100;
+  const offset = -currentIndex * 100
   images.forEach((images) => {
-    images.style.transform = `translateX(${offset}%)`;
-  });
+    images.style.transform = `translateX(${offset}%)`
+  })
 }
+
+// ====================================================================
+//                          DOWLOAD CV
+// ====================================================================
+
+document
+  .getElementById('downloadButton')
+  .addEventListener('click', function () {
+    // Define the file URL
+    var fileURL = './data/cv.pdf' // Replace with the actual file URL
+
+    // Create a temporary anchor element
+    var downloadLink = document.createElement('a')
+    downloadLink.href = fileURL
+    downloadLink.download = 'francoisdutoit-cv.pdf'
+    // You can set the desired filename here
+
+    // Trigger a click event on the anchor element
+    document.body.appendChild(downloadLink)
+    downloadLink.click()
+    document.body.removeChild(downloadLink)
+  })
