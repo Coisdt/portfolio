@@ -291,35 +291,33 @@ let currentIndex = 0
 // });
 
 // MY FIRST ATTEMPT
-nextButton.addEventListener('click', () => {
-  currentIndex++
-  updateCarousel()
-  if (currentIndex >= images.length - 1) {
-    currentIndex = 0 - 1
-  }
-  console.log(currentIndex)
-  return
-})
+// nextButton.addEventListener('click', () => {
+//   currentIndex++
+//   updateCarousel()
+//   if (currentIndex >= images.length - 1) {
+//     currentIndex = 0 - 1
+//   }
+//   console.log(currentIndex)
+//   return
+// })
 
-prevButton.addEventListener('click', () => {
-  currentIndex--
-  // console.log(currentIndex);
-  // console.log(images.length - 1);
-  if (currentIndex === -1) {
-    currentIndex = images.length - 1
-  }
-  updateCarousel()
-  console.log(currentIndex)
-})
+// prevButton.addEventListener('click', () => {
+//   currentIndex--
+//   if (currentIndex === -1) {
+//     currentIndex = images.length - 1
+//   }
+//   updateCarousel()
+//   console.log(currentIndex)
+// })
 
-console.log(currentIndex)
+// console.log(currentIndex)
 
-function updateCarousel() {
-  const offset = -currentIndex * 100
-  images.forEach((images) => {
-    images.style.transform = `translateX(${offset}%)`
-  })
-}
+// function updateCarousel() {
+//   const offset = -currentIndex * 100
+//   images.forEach((images) => {
+//     images.style.transform = `translateX(${offset}%)`
+//   })
+// }
 
 // ====================================================================
 //                          DOWLOAD CV
